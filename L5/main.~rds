@@ -1,0 +1,2959 @@
+EXPSYSTXT
+version 1 rev 0 4022.1.9.16.44.1
+
+pictures
+ begin
+  picture id 0
+   begin
+    rect from 0 0 size 29 29 solid color 0 fill 16777215
+    rect from 12 2 size 15 15 solid scalewidth color 0
+    line from 17 2 to 17 17 solid color 0
+    line from 22 2 to 22 17 solid color 0
+    line from 12 7 to 27 7 solid color 0
+    line from 12 12 to 27 12 solid color 0
+    line from 3 10 to 12 10 solid scalewidth color 0 arrow 5 2 to
+    textblock from 2 19 size 26 9 text "dbl" notranslate font "Arial" height 9 color 0
+   end
+ end
+
+styles
+ begin
+  style name "Стандартная связь" solid scalewidth color 0 arrow 10 2 dotsize 5 default conn all types
+  style name "Стандартная шина" solid width 5 scalewidth color 0 arrow 10 5 dotsize 0 default bus
+ end
+
+global
+ begin
+  object name "L57_FCalc.mdl" type "ICS.l49.Common.dll.bcpp55.model.scheme.$BC55MODEL" id 0 string "$BC55MODEL\r\n#substlang \"English\"\r\n|Автоматически генерируемая модель п"+
+  +"ростого вычислителя функции\r\n>English\r\n|Automatically generated model "+
+  +"of simple function calculation\r\n$NOSHARE\r\n$VARS\r\n  signal name \"_Start"+
+  +"\" in run default 1\r\n  signal name \"_Ready\" out default 0\r\n  short name"+
+  +" \"Aux_in\" in hide default 0\r\n  short name \"Aux_out\" out hide default 0"+
+  +"\r\n  char name \"Func_in\" in menu default \"\"\r\n  char name \"Func_out\" out"+
+  +" menu default \"\"\r\n      double name \"Calc_out\" out menu default \"?\"\r\n "+
+  +" signal name \"_allinval_dchg\" default 1\r\n  double name \"Y\" in menu run"+
+  +" default \"0\"\r\n  double name \"L\" in menu run default \"0\"\r\n  double name"+
+  +" \"L0\" in menu run default \"0\"\r\n  double name \"r\" in menu run default \""+
+  +"0\"\r\n  double name \"G\" in menu run default \"\"\r\n  double name \"V\" in men"+
+  +"u run default \"\"\r\n\r\n$AUTO\r\n    \"Y\",\"_allinval_dchg\"\r\n    \"L\",\"_allinva"+
+  +"l_dchg\"\r\n    \"L0\",\"_allinval_dchg\"\r\n    \"r\",\"_allinval_dchg\"\r\n    \"G\","+
+  +"\"_allinval_dchg\"\r\n    \"V\",\"_allinval_dchg\"\r\n$PARAM\r\n  int name \"TR_par"+
+  +"ams\" default \"0\"\r\n  rdsbcppString name \"TR_text\" default \"\" notranslat"+
+  +"e\r\n$REGFUN\r\n  name \"IPU.L57.UserFuncTransfer.IsFuncSource\" id \"L57_Blk"+
+  +"Func_IsFuncSource\"\r\n  name \"IPU.L57.UserFuncTransfer.AcceptFunction\" i"+
+  +"d \"L57_BlkFunc_AcceptFunc\" param \"L57_AcceptFunc_Param*\"\r\n  name \"IPU."+
+  +"L57.UserFuncTransfer.AcceptParameter\" id \"L57_BlkFunc_AcceptParam\" par"+
+  +"am \"L57_AcceptParam_Param*\"\r\n  name \"IPU.L57.UserFuncTransfer.IsParame"+
+  +"terTransferredWithFunc\" id \"L57_BlkFunc_CheckTransParam\" param \"L57_Ch"+
+  +"eckParamConn_Param*\"\r\n  name \"IPU.L57.UserFuncTransfer.CheckParamTrans"+
+  +"fer\" id \"L57_BlkFunc_CheckTransParam2\" param \"L57_CheckTranser_Param*\""+
+  +"\r\n$LINKS\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2SimpleCalc.cpp\"\r\n  ma"+
+  +"nual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2Basic.cpp\"\r\n  manual \"$RDSINCLUDE$\\"+
+  +"RdsL57Mk2\\L57Mk2Basic.h\"\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2Bits."+
+  +"cpp\"\r\n$CUSTOMERR\r\n|В одном из описаний функций обнаружена ошибка: види"+
+  +"мо, текст функции написан не в синтаксисе языка C. Пожалуйста, проверь"+
+  +"те все описания в настройках блока или откройте редактор модели и изуч"+
+  +"ите ошибки, выданные компилятором.\r\n$STRINGS\r\n  id \"L57_MSGCAPTION\" te"+
+  +"xt \"Вычисление функции\" lf bin \"$CURLANG$\\Dll\\L57.bin\" \"SemiAutoSimple"+
+  +"Func\" \"ModelMessagesCaption\"\r\n$ENDDECL\r\n$GLOBAL\r\n/* ВНИМАНИЕ! Эта моде"+
+  +"ль не предназначена для редактирования пользователем,\r\nее текст генери"+
+  +"руется автоматически\r\n   ATTENTION! This model is generated automatica"+
+  +"lly, do not edit it */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"+
+  +"\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// Версия модели (в норме должна соответствова"+
+  +"ть L57_LATESTMODELVERSION)\r\n#define L57_MODELVERSION 16\r\n\r\n// Файл и т"+
+  +"ема справки\r\n#define L57_HELPUIFILE \"Blocks\\\\L57.ui\"\r\n#define L57_HELP"+
+  +"TOPIC \"L57Mk2SimpleCalc\"\r\n\r\n// Заголовки функций для индикации\r\n#defin"+
+  +"e L57_TITLES \"Прибыль агента\"\r\n\r\n// Тела функций для индикации\r\n#defin"+
+  +"e L57_PROGRAMS \"if (L0*Y<=V) \\r\\n\\treturn V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)"+
+  +"*V;\\r\\nreturn 0;\"\r\n\r\n#define L57MS_GLOBALS\r\n#include <RdsL57Mk2/L57Mk2"+
+  +"SimpleCalc.cpp>\r\n#undef L57MS_GLOBALS\r\n\r\n\r\n// Служебный класс для вычи"+
+  +"сления значения функции\r\n#define ERRORVALUE (L57_ERROR())\r\n#define L57"+
+  +"_CALCCLASSNAME L57_Calc\r\n#define L57_CALCTYPE_VALUE\r\nclass L57_Calc\r\n{"+
+  +"\r\n  public:\r\n    inline double L57_ERROR(void){return rdsbcppHugeDoubl"+
+  +"e;};\r\n    double Y;\r\n    double L;\r\n    double L0;\r\n    double r;\r\n   "+
+  +" double G;\r\n    double V;\r\n    // Функция вычисления (генерируемая)\r\n "+
+  +"   double _Calc_gen(void);\r\n    // Функция вычисления double (с перехв"+
+  +"атом исключений)\r\n    double _Calc_main(void)\r\n    { double __temp;\r\n "+
+  +"     RDSBCPP_TRY\r\n        { __temp=_Calc_gen(); }\r\n      RDSBCPP_CATCH"+
+  +"ALL\r\n        { __temp=rdsbcppHugeDouble; }\r\n      return __temp;\r\n    "+
+  +"};\r\n    // Функция вычисления исходного типа (с перехватом исключений)"+
+  +"\r\n    double _Calc_original(void)\r\n{ return _Calc_main(); };\r\n};\r\n// Ф"+
+  +"ункция вычисления (генерируемая)\r\ndouble L57_Calc::_Calc_gen(void)\r\n{\r"+
+  +"\n  #define L57_ORIGPARAM(x) (L57_CALCCLASSNAME::x)\r\n  #ifndef BCPP55_E"+
+  +"RRORRETRYCOMPILE\r\nif (L0*Y<=V) \r\n	return V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)*"+
+  +"V;\r\nreturn 0;\r\n  #endif // ifndef BCPP55_ERRORRETRYCOMPILE\r\n; /* */\r\n "+
+  +" return rdsbcppHugeDouble;\r\n  #undef L57_ORIGPARAM\r\n}\r\n#undef L57_CALC"+
+  +"CLASSNAME\r\n#undef ERRORVALUE\r\n//--------------------------------------"+
+  +"--------------------------------\r\n\r\n$MODEL\r\n/* ВНИМАНИЕ! Эта модель не"+
+  +" предназначена для редактирования пользователем,\r\nее текст генерируетс"+
+  +"я автоматически */\r\n\r\n#define L57MS_MODEL\r\n#include <RdsL57Mk2/L57Mk2S"+
+  +"impleCalc.cpp>\r\n#undef L57MS_MODEL\r\n\r\n    Calc_out=_Calculator._Calc_m"+
+  +"ain();\r\n\r\n\r\n\r\n\r\n\r\n\r\n$SETUP\r\n/* ВНИМАНИЕ! Эта модель не предназначена д"+
+  +"ля редактирования пользователем,\r\nее текст генерируется автоматически "+
+  +"*/\r\n\r\n#define L57MS_SETUP\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n"+
+  +"#undef L57MS_SETUP\r\n\r\n$CLASSDEF\r\n/* ВНИМАНИЕ! Эта модель не предназнач"+
+  +"ена для редактирования пользователем,\r\nее текст генерируется автоматич"+
+  +"ески */\r\n\r\n#define L57MS_CLASS\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.c"+
+  +"pp>\r\n#undef L57MS_CLASS\r\n\r\n  // Объекты для передачи входов-параметров"+
+  +" функции\r\n  L57_FuncTransfer _Transfer;\r\n  L57_FuncTransferParameter *"+
+  +"Y_trans;\r\n  L57_FuncTransferParameter *L_trans;\r\n  L57_FuncTransferPar"+
+  +"ameter *L0_trans;\r\n  L57_FuncTransferParameter *r_trans;\r\n  L57_FuncTr"+
+  +"ansferParameter *G_trans;\r\n  L57_FuncTransferParameter *V_trans;\r\n  //"+
+  +" Сброс\r\n  void L57_Reset_Trans_Data(void)\r\n  {\r\n    Y_trans=NULL;\r\n   "+
+  +" L_trans=NULL;\r\n    L0_trans=NULL;\r\n    r_trans=NULL;\r\n    G_trans=NUL"+
+  +"L;\r\n    V_trans=NULL;\r\n  };\r\n  // Создание всех параметров передачи\r\n "+
+  +" void L57_Create_Trans_Data(void);\r\n\r\n  // Хранилища для проверки изме"+
+  +"нения переменных\r\n  double Y_old;\r\n  double L_old;\r\n  double L0_old;\r\n"+
+  +"  double r_old;\r\n  double G_old;\r\n  double V_old;\r\n  // Инициализация "+
+  +"хранилищ значений\r\n  void L57_Init_Old_Data(void)\r\n  {\r\n    Y_old=rdsb"+
+  +"cppHugeDouble;\r\n    L_old=rdsbcppHugeDouble;\r\n    L0_old=rdsbcppHugeDo"+
+  +"uble;\r\n    r_old=rdsbcppHugeDouble;\r\n    G_old=rdsbcppHugeDouble;\r\n   "+
+  +" V_old=rdsbcppHugeDouble;\r\n  };\r\n\r\n$CLASSEXT\r\n/* ВНИМАНИЕ! Эта модель "+
+  +"не предназначена для редактирования пользователем,\r\nее текст генерируе"+
+  +"тся автоматически */\r\n\r\n#define L57MS_AFTERCLASS\r\n#include <RdsL57Mk2/"+
+  +"L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_AFTERCLASS\r\n\r\n// Экспорт текста фу"+
+  +"нкции для взаимодействия с другими блоками по связям\r\nchar *rdsbcppBlo"+
+  +"ckClass::_FuncExportText=\"V G V \\n\"\r\n\"V L V 0\\n\"\r\n\"V L0 V 0\\n\"\r\n\"V r V"+
+  +" 0\\n\"\r\n\"V V V \\n\"\r\n\"V Y V 0\\n\"\r\n\"F\\n\"\r\n\"TПрибыль агента\\n\"\r\n\"X\\n\"\r\n\"|i"+
+  +"f (L0*Y<=V) \\n\"\r\n\"|\\treturn V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)*V;\\n\"\r\n\"|retu"+
+  +"rn 0;\\n\"\r\n\"}\\n\"\r\n\"#ORDER#\\n\"\r\n\"Y\\n\"\r\n\"L\\n\"\r\n\"L0\\n\"\r\n\"r\\n\"\r\n\"G\\n\"\r\n\"V\";"+
+  +"\r\n\r\n// Занесение стационарных переменных в вычислитель функции\r\nvoid r"+
+  +"dsbcppBlockClass::L57InputsToCalc(void)\r\n{\r\n  _Calculator.Y=Y;\r\n  _Cal"+
+  +"culator.L=L;\r\n  _Calculator.L0=L0;\r\n  _Calculator.r=r;\r\n  _Calculator."+
+  +"G=G;\r\n  _Calculator.V=V;\r\n}\r\n//---------------------------------------"+
+  +"--------------------------------\r\n\r\n// Создание всех параметров переда"+
+  +"чи\r\nvoid rdsbcppBlockClass::L57_Create_Trans_Data(void)\r\n{\r\n  // Стаци"+
+  +"онарных входов: 6\r\n  _Transfer.ClearParameters();\r\n  _Transfer.Enlarge"+
+  +"Parameters(6);\r\n\r\n  Y_trans=_Transfer.AddParameterRds(\"Y\",L57_VARSUFFI"+
+  +"X_NONE,FALSE,Y.Num(),&Y);\r\n  L_trans=_Transfer.AddParameterRds(\"L\",L57"+
+  +"_VARSUFFIX_NONE,FALSE,L.Num(),&L);\r\n  L0_trans=_Transfer.AddParameterR"+
+  +"ds(\"L0\",L57_VARSUFFIX_NONE,FALSE,L0.Num(),&L0);\r\n  r_trans=_Transfer.A"+
+  +"ddParameterRds(\"r\",L57_VARSUFFIX_NONE,FALSE,r.Num(),&r);\r\n  G_trans=_T"+
+  +"ransfer.AddParameterRds(\"G\",L57_VARSUFFIX_NONE,FALSE,G.Num(),&G);\r\n  V"+
+  +"_trans=_Transfer.AddParameterRds(\"V\",L57_VARSUFFIX_NONE,FALSE,V.Num(),"+
+  +"&V);\r\n\r\n}\r\n//---------------------------------------------------------"+
+  +"--------------\r\n\r\n// Проверка изменения переменных и передача параметр"+
+  +"ов\r\nvoid rdsbcppBlockClass::L57InputsChange(void)\r\n{ BOOL _changes=FAL"+
+  +"SE;\r\n\r\n  // Стационарных вещественных входов: 6\r\n  // Служебных вещест"+
+  +"венных входов: 0\r\n  // Итого вещественных: 6\r\n\r\n  // Вещественные вход"+
+  +"ы\r\n  if(_allinval_dchg!=0)\r\n    { _allinval_dchg=0;\r\n      _changes=FA"+
+  +"LSE;\r\n\r\n      if(Y_old!=Y)\r\n        { _changes=TRUE;\r\n          _Trans"+
+  +"fer.TransferParameter(rdsbcppBlockData->Block,Y_trans,_Transfer.DestBl"+
+  +"ocks,TRUE);\r\n        }\r\n      if(L_old!=L)\r\n        { _changes=TRUE;\r\n"+
+  +"          _Transfer.TransferParameter(rdsbcppBlockData->Block,L_trans,"+
+  +"_Transfer.DestBlocks,TRUE);\r\n        }\r\n      if(L0_old!=L0)\r\n        "+
+  +"{ _changes=TRUE;\r\n          _Transfer.TransferParameter(rdsbcppBlockDa"+
+  +"ta->Block,L0_trans,_Transfer.DestBlocks,TRUE);\r\n        }\r\n      if(r_"+
+  +"old!=r)\r\n        { _changes=TRUE;\r\n          _Transfer.TransferParamet"+
+  +"er(rdsbcppBlockData->Block,r_trans,_Transfer.DestBlocks,TRUE);\r\n      "+
+  +"  }\r\n      if(G_old!=G)\r\n        { _changes=TRUE;\r\n          _Transfer"+
+  +".TransferParameter(rdsbcppBlockData->Block,G_trans,_Transfer.DestBlock"+
+  +"s,TRUE);\r\n        }\r\n      if(V_old!=V)\r\n        { _changes=TRUE;\r\n   "+
+  +"       _Transfer.TransferParameter(rdsbcppBlockData->Block,V_trans,_Tr"+
+  +"ansfer.DestBlocks,TRUE);\r\n        }\r\n\r\n      if(_changes)\r\n        { /"+
+  +"/ Запоминание изменившихся\r\n          Y_old=Y;\r\n          L_old=L;\r\n  "+
+  +"        L0_old=L0;\r\n          r_old=r;\r\n          G_old=G;\r\n          "+
+  +"V_old=V;\r\n        }\r\n    }\r\n\r\n  // Матричные входы (матрицы, массивы, "+
+  +"функции)\r\n\r\n}\r\n//-----------------------------------------------------"+
+  +"------------------\r\n\r\n$INIT\r\n/* ВНИМАНИЕ! Эта модель не предназначена "+
+  +"для редактирования пользователем,\r\nее текст генерируется автоматически"+
+  +" */\r\n\r\n#define L57MS_INIT\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n"+
+  +"#undef L57MS_INIT\r\n\r\n\r\n$START\r\n/* ВНИМАНИЕ! Эта модель не предназначен"+
+  +"а для редактирования пользователем,\r\nее текст генерируется автоматичес"+
+  +"ки */\r\n\r\n#define L57MS_START\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp"+
+  +">\r\n#undef L57MS_START\r\n\r\n$CALCMODE\r\n/* ВНИМАНИЕ! Эта модель не предназ"+
+  +"начена для редактирования пользователем,\r\nее текст генерируется автома"+
+  +"тически */\r\n\r\n#define L57MS_CALCMODE\r\n#include <RdsL57Mk2/L57Mk2Simple"+
+  +"Calc.cpp>\r\n#undef L57MS_CALCMODE\r\n\r\n$LOADTEXT\r\n/* ВНИМАНИЕ! Эта модель"+
+  +" не предназначена для редактирования пользователем,\r\nее текст генериру"+
+  +"ется автоматически */\r\n\r\n#define L57MS_LOADPARAMS\r\n#include <RdsL57Mk2"+
+  +"/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_LOADPARAMS\r\n$SAVETEXT\r\n/* ВНИМАНИ"+
+  +"Е! Эта модель не предназначена для редактирования пользователем,\r\nее т"+
+  +"екст генерируется автоматически */\r\n\r\n#define L57MS_SAVEPARAMS\r\n#inclu"+
+  +"de <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_SAVEPARAMS\r\n$OTHER\r\n"+
+  +"/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пользовате"+
+  +"лем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_OTHER\r\n#"+
+  +"include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_OTHER\r\n$FUNC \"I"+
+  +"PU.L57.UserFuncTransfer.IsFuncSource\"\r\n/* ВНИМАНИЕ! Эта модель не пред"+
+  +"назначена для редактирования пользователем,\r\nее текст генерируется авт"+
+  +"оматически */\r\n\r\nResult=1;\r\n$FUNC \"IPU.L57.UserFuncTransfer.AcceptFunc"+
+  +"tion\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пол"+
+  +"ьзователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_A"+
+  +"CCEPTFUNC\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_ACC"+
+  +"EPTFUNC\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.AcceptParameter\"\r\n/* ВНИМАН"+
+  +"ИЕ! Эта модель не предназначена для редактирования пользователем,\r\nее "+
+  +"текст генерируется автоматически */\r\n\r\n#define L57MS_ACCEPTPARAM\r\n#inc"+
+  +"lude <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_ACCEPTPARAM\r\n\r\n$FU"+
+  +"NC \"IPU.L57.UserFuncTransfer.IsParameterTransferredWithFunc\"\r\n/* ВНИМА"+
+  +"НИЕ! Эта модель не предназначена для редактирования пользователем,\r\nее"+
+  +" текст генерируется автоматически */\r\n\r\n#define L57MS_CHECKTRANSFUNC\r\n"+
+  +"#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_CHECKTRANSFUNC"+
+  +"\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.CheckParamTransfer\"\r\n/* ВНИМАНИЕ! "+
+  +"Эта модель не предназначена для редактирования пользователем,\r\nее текс"+
+  +"т генерируется автоматически */\r\n\r\n#define L57MS_CHECKTRANSFUNC2\r\n#inc"+
+  +"lude <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_CHECKTRANSFUNC2\r\n\r"+
+  +"\n\r\n$VARCHECK\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирова"+
+  +"ния пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define "+
+  +"L57MS_VARCHECK\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57M"+
+  +"S_VARCHECK\r\n\r\n$RESET\r\n/* ВНИМАНИЕ! Эта модель не предназначена для ред"+
+  +"актирования пользователем,\r\nее текст генерируется автоматически */\r\n\r\n"+
+  +"#define L57MS_RESET\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef"+
+  +" L57MS_RESET\r\n\r\n$DRAWADD\r\n/* ВНИМАНИЕ! Эта модель не предназначена для"+
+  +" редактирования пользователем,\r\nее текст генерируется автоматически */"+
+  +"\r\n\r\n#define L57MS_DRAWADDITIONAL\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc"+
+  +".cpp>\r\n#undef L57MS_DRAWADDITIONAL\r\n\r\n$HINT\r\n/* ВНИМАНИЕ! Эта модель н"+
+  +"е предназначена для редактирования пользователем,\r\nее текст генерирует"+
+  +"ся автоматически */\r\n\r\n#define L57MS_HINT\r\n#include <RdsL57Mk2/L57Mk2S"+
+  +"impleCalc.cpp>\r\n#undef L57MS_HINT\r\n\r\n$POPUP\r\n/* ВНИМАНИЕ! Эта модель н"+
+  +"е предназначена для редактирования пользователем,\r\nее текст генерирует"+
+  +"ся автоматически */\r\n\r\n#define L57MS_POPUP\r\n#include <RdsL57Mk2/L57Mk2"+
+  +"SimpleCalc.cpp>\r\n#undef L57MS_POPUP\r\n\r\n\r\n$HIDDEN\r\n{I\r\n W64,64,64\r\n {V\r"+
+  +"\n  NY\r\n  TV\r\n  V=0\r\n }\r\n {V\r\n  NL\r\n  TV\r\n  V=0\r\n }\r\n {V\r\n  NL0\r\n  TV\r\n"+
+  +"  V=0\r\n }\r\n {V\r\n  Nr\r\n  TV\r\n  V=0\r\n }\r\n {V\r\n  NG\r\n  TV\r\n  V=\r\n }\r\n {V\r"+
+  +"\n  NV\r\n  TV\r\n  V=\r\n }\r\n}\r\n{F\r\n {F0\r\n  TПрибыль агента\r\n  V\r\n  I0\r\n  C\r"+
+  +"\n  |if (L0*Y<=V) \r\n  |	return V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)*V;\r\n  |retu"+
+  +"rn 0;\r\n }\r\n}\r\n$OPTIONS\r\n  tabs $GLOBAL\r\n  window pos 18 164 size 1214 "+
+  +"837 hdiv 337 vdiv 356 fdiv 334 hidevar\r\n  svc 0 90 1 73 2 90 3 90\r\n  d"+
+  +"vc 0 90 1 90 2 90\r\n  fnc 0 90 1 90 2 90\r\n  pvc 0 90 1 90 2 100\r\n  dvch"+
+  +"eck 1\r\n  indexcheck 0\r\n  ignorewarnings 1\r\n  customerrmsg 1 showblock\r"+
+  +"\n  customerrtransl \"$CURLANG$\\Dll\\L57.bin\" \"L57mdl\" \"CustomErrSingleFu"+
+  +"nc\"\r\n  autoreadonlyeditor 1\r\n  genvartypemacros 0\r\n  matherr 1\r\n  catc"+
+  +"hall 0\r\n  dvstart 1\r\n  errorretrycompile 1\r\n  searchlinks off\r\n  undef"+
+  +"vars 1\r\n" 
+  object name "L57_ArgMax.mdl" type "ICS.l49.Common.dll.bcpp55.model.scheme.$BC55MODEL" id 0 string "$BC55MODEL\r\n#substlang \"English\"\r\n|Автоматически генерируемая модель п"+
+  +"олуавтокомпилируемого внутреннего максимизатора\r\n>English\r\n|Automatica"+
+  +"lly generated model of user-defined function maximizer\r\n$NOSHARE\r\n$VAR"+
+  +"S\r\n  signal name \"_Start\" in run default 1\r\n  signal name \"_Ready\" out"+
+  +" default 0\r\n  short name \"Aux_in\" in hide default 0\r\n  short name \"Aux"+
+  +"_out\" out hide default 0\r\n  signal name \"Start_cmd\" in menu run defaul"+
+  +"t 0\r\n  signal name \"Restart_cmd\" in menu run default 0\r\n  matrix logic"+
+  +"al oneindex name \"Enabled_in\" in run default \"[ ] 0\"\r\n  signal name \"_"+
+  +"Enabled_chg\" default 1\r\n  int name \"_Stage\" out default 0\r\n  int name "+
+  +"\"_SubStage\" out default 0\r\n  logical name \"_results_ok\" default 0\r\n  l"+
+  +"ogical name \"_enabled_res\" default 1\r\n  logical name \"Complete_out\" ou"+
+  +"t default 0\r\n  logical name \"Error_out\" out default 0\r\n  signal name \""+
+  +"Finished_out\" out default 0\r\n  signal name \"Started_out\" out default 0"+
+  +"\r\n  double name \"Time_out\" out default \"?\"\r\n  char name \"Func_in\" in m"+
+  +"enu default \"\"\r\n  char name \"Func_out\" out menu default \"\"\r\n  signal n"+
+  +"ame \"_allinval_dchg\" default 1\r\n  double name \"L\" in menu run default "+
+  +"\"0\"\r\n  double name \"L0\" in menu run default \"0\"\r\n  double name \"r\" in "+
+  +"menu run default \"0\"\r\n  double name \"G\" in menu run default \"\"\r\n  doub"+
+  +"le name \"V\" in menu run default \"\"\r\n  matrix double name \"argmax_func\""+
+  +" out menu default \"[ ] ?\"\r\n  matrix double name \"AllMax_out\" out defau"+
+  +"lt \"[ ] ?\"\r\n  double name \"Progress_out\" out default \"0\"\r\n  matrix dou"+
+  +"ble oneindex name \"Y_res\" out menu default \"[ ] ?\"\r\n  double name \"Y_r"+
+  +"es_f\" out default \"?\"\r\n  matrix double oneindex name \"_max_res\" out me"+
+  +"nu default \"[ ] ?\"\r\n  double name \"_max_res_f\" out default \"?\"\r\n\r\n$AUT"+
+  +"O\r\n  \"Enabled_in\",\"_Enabled_chg\"\r\n  \"AllMax_out\",\"_results_ok\"\r\n  \"Com"+
+  +"plete_out\",\"_results_ok\"\r\n  \"Error_out\",\"_results_ok\"\r\n    \"L\",\"_allin"+
+  +"val_dchg\"\r\n    \"L0\",\"_allinval_dchg\"\r\n    \"r\",\"_allinval_dchg\"\r\n    \"G"+
+  +"\",\"_allinval_dchg\"\r\n    \"V\",\"_allinval_dchg\"\r\n  \"argmax_func\",\"_result"+
+  +"s_ok\"\r\n  \"Y_res\",\"_results_ok\"\r\n  \"Y_res_f\",\"_results_ok\"\r\n  \"_max_res"+
+  +"\",\"_results_ok\"\r\n  \"_max_res_f\",\"_results_ok\"\r\n\r\n$PARAM\r\n  BOOL name \""+
+  +"deepsearch_setup\" default \"FALSE\"\r\n  BOOL name \"noautostart_setup\" def"+
+  +"ault \"FALSE\"\r\n  double name \"ChunkSizeMb_setup\" default \"4\"\r\n  int nam"+
+  +"e \"tactcount_setup\" default \"1000\"\r\n  double name \"EqualMaxDelta_setup"+
+  +"\" default \"0.001\"\r\n  BOOL name \"PrecToEndSteps_setup\" default \"TRUE\"\r\n"+
+  +"  BOOL name \"PrecToDf_setup\" default \"TRUE\"\r\n  int name \"DfCycles_setu"+
+  +"p\" default \"5\"\r\n  double name \"DfDelta_setup\" default \"0.00001\"\r\n  int"+
+  +" name \"PrecGridSize_setup\" default \"0\"\r\n  BOOL name \"NoPlateau_setup\" "+
+  +"default \"FALSE\"\r\n  BOOL name \"TabAfterCalc_setup\" default \"TRUE\"\r\n  BO"+
+  +"OL name \"TabPrecCalc_setup\" default \"TRUE\"\r\n  BOOL name \"Tab_PrecToEnd"+
+  +"Steps_setup\" default \"TRUE\"\r\n  BOOL name \"Tab_PrecToDf_setup\" default "+
+  +"\"TRUE\"\r\n  int name \"Tab_DfCycles_setup\" default \"5\"\r\n  double name \"Ta"+
+  +"b_DfDelta_setup\" default \"0.00001\"\r\n  int name \"Tab_PrecGridSize_setup"+
+  +"\" default \"0\"\r\n  double name \"DfFilter_setup\" default \"0.00001\"\r\n  int"+
+  +" name \"TR_params\" default \"0\"\r\n  rdsbcppString name \"TR_text\" default "+
+  +"\"\" notranslate\r\n  int name \"StartCycles_setup\" default \"20\"\r\n$REGFUN\r\n"+
+  +"  name \"IPU.L57.UserFuncTransfer.IsFuncSource\" id \"L57_BlkFunc_IsFuncS"+
+  +"ource\"\r\n  name \"IPU.L57.UserFuncTransfer.AcceptFunction\" id \"L57_BlkFu"+
+  +"nc_AcceptFunc\" param \"L57_AcceptFunc_Param*\"\r\n  name \"IPU.L57.UserFunc"+
+  +"Transfer.AcceptParameter\" id \"L57_BlkFunc_AcceptParam\" param \"L57_Acce"+
+  +"ptParam_Param*\"\r\n  name \"IPU.L57.UserFuncTransfer.IsParameterTransferr"+
+  +"edWithFunc\" id \"L57_BlkFunc_CheckTransParam\" param \"L57_CheckParamConn"+
+  +"_Param*\"\r\n  name \"IPU.L57.UserFuncTransfer.CheckParamTransfer\" id \"L57"+
+  +"_BlkFunc_CheckTransParam2\" param \"L57_CheckTranser_Param*\"\r\n$LINKS\r\n  "+
+  +"manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2ArgMax.cpp\"\r\n  manual \"$RDSINCLUD"+
+  +"E$\\RdsL57Mk2\\L57Mk2Basic.cpp\"\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2"+
+  +"Basic.h\"\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2Bits.cpp\"\r\n$CUSTOMERR"+
+  +"\r\n|В одном из описаний функций обнаружена ошибка: видимо, текст функци"+
+  +"и написан не в синтаксисе языка C. Пожалуйста, проверьте все описания "+
+  +"в настройках блока или откройте редактор модели и изучите ошибки, выда"+
+  +"нные компилятором.\r\n$STRINGS\r\n  id \"L57_MSGCAPTION\" text \"Внутренний м"+
+  +"аксимизатор\" lf bin \"$CURLANG$\\Dll\\L57.bin\" \"SemiAutoArgMax\" \"ModelMes"+
+  +"sagesCaption\"\r\n$ENDDECL\r\n$GLOBAL\r\n/* ВНИМАНИЕ! Эта модель не предназна"+
+  +"чена для редактирования пользователем,\r\nее текст генерируется автомати"+
+  +"чески\r\n   ATTENTION! This model is generated automatically, do not edi"+
+  +"t it */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r"+
+  +"\n\r\n\r\n\r\n\r\n// Версия модели (в норме должна соответствовать L57_LATESTMO"+
+  +"DELVERSION)\r\n#define L57_MODELVERSION 15\r\n\r\n// Число максимизируемых п"+
+  +"араметров\r\n#define L57_PARAMSCOUNT 1\r\n\r\n// Файл и тема справки\r\n#defin"+
+  +"e L57_HELPUIFILE \"Blocks\\\\L57.ui\"\r\n#define L57_HELPTOPIC \"L57Mk2ArgMax"+
+  +"\"\r\n\r\n// Заголовки функций для индикации\r\n#define L57_TITLES \"\"\r\n// Тел"+
+  +"а функций для индикации\r\n#define L57_PROGRAMS \"if (L0*Y<=V) \\r\\n\\tretu"+
+  +"rn V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)*V;\\r\\nreturn 0;\"\r\n\r\n// Число простых в"+
+  +"ыходных таблиц F(x)\r\n#define L57_ONEARG_SIMPLE_CNT 0\r\n// Число простых"+
+  +" выходных таблиц F(x,y)\r\n#define L57_TWOARG_SIMPLE_CNT 0\r\n// Число вых"+
+  +"одных таблиц ArgMax(x)\r\n#define L57_ONEARG_ARGMAX_CNT 1\r\n// Число выхо"+
+  +"дных таблиц ArgMax(x,y)\r\n#define L57_TWOARG_ARGMAX_CNT 0\r\n\r\n// Определ"+
+  +"ены конечные шаги\r\n#define L57_ENDSTEPSUSED\r\n\r\n#define L57MS_GLOBALS\r\n"+
+  +"#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_GLOBALS\r\n\r\n\r\n// Сл"+
+  +"ужебный класс для вычисления значения функции\r\n#define ERRORVALUE (L57"+
+  +"_ERROR())\r\n#define L57_CALCCLASSNAME L57_Calc\r\n#define L57_CALCTYPE_VA"+
+  +"LUE\r\nclass L57_Calc\r\n{\r\n  public:\r\n    inline double L57_ERROR(void){r"+
+  +"eturn rdsbcppHugeDouble;};\r\n    double Y;\r\n    double L;\r\n    double L"+
+  +"0;\r\n    double r;\r\n    double G;\r\n    double V;\r\n    // Функция вычисл"+
+  +"ения (генерируемая)\r\n    double _Calc_gen(void);\r\n    // Функция вычис"+
+  +"ления double (с перехватом исключений)\r\n    double _Calc_main(void)\r\n "+
+  +"   { double __temp;\r\n      RDSBCPP_TRY\r\n        { __temp=_Calc_gen(); "+
+  +"}\r\n      RDSBCPP_CATCHALL\r\n        { __temp=rdsbcppHugeDouble; }\r\n    "+
+  +"  return __temp;\r\n    };\r\n    // Функция вычисления исходного типа (с "+
+  +"перехватом исключений)\r\n    double _Calc_original(void)\r\n{ return _Cal"+
+  +"c_main(); };\r\n};\r\n// Функция вычисления (генерируемая)\r\ndouble L57_Cal"+
+  +"c::_Calc_gen(void)\r\n{\r\n  #define L57_ORIGPARAM(x) (L57_CALCCLASSNAME::"+
+  +"x)\r\n  #ifndef BCPP55_ERRORRETRYCOMPILE\r\nif (L0*Y<=V) \r\n	return V+(L-L0"+
+  +")*Y-Y*Y/(2.0*r)-(1+G)*V;\r\nreturn 0;\r\n  #endif // ifndef BCPP55_ERRORRE"+
+  +"TRYCOMPILE\r\n; /* */\r\n  return rdsbcppHugeDouble;\r\n  #undef L57_ORIGPAR"+
+  +"AM\r\n}\r\n#undef L57_CALCCLASSNAME\r\n#undef ERRORVALUE\r\n//----------------"+
+  +"------------------------------------------------------\r\n\r\n$MODEL\r\n/* В"+
+  +"НИМАНИЕ! Эта модель не предназначена для редактирования пользователем,"+
+  +"\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_MODEL\r\n#incl"+
+  +"ude <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_MODEL\r\n\r\n$SETUP\r\n/* ВНИ"+
+  +"МАНИЕ! Эта модель не предназначена для редактирования пользователем,\r\n"+
+  +"ее текст генерируется автоматически */\r\n\r\n#define L57MS_SETUP\r\n#includ"+
+  +"e <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_SETUP\r\n\r\n$CLASSDEF\r\n/* ВН"+
+  +"ИМАНИЕ! Эта модель не предназначена для редактирования пользователем,\r"+
+  +"\nее текст генерируется автоматически */\r\n\r\n#define L57MS_CLASS\r\n#inclu"+
+  +"de <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_CLASS\r\n\r\n  // Фиксирован"+
+  +"ные значения границ и шагов\r\n    double Y_0;\r\n    double Y_min;\r\n    d"+
+  +"ouble Y_max;\r\n    double Y_step;\r\n    double Y_end;\r\n  // Инициализаци"+
+  +"я фиксированных значений\r\n  void L57_Init_Fixed_Data(void);\r\n\r\n  // Об"+
+  +"ъекты для передачи входов-параметров функции\r\n  L57_FuncTransfer _Tran"+
+  +"sfer;\r\n  L57_FuncTransferParameter *L_trans;\r\n  L57_FuncTransferParame"+
+  +"ter *L0_trans;\r\n  L57_FuncTransferParameter *r_trans;\r\n  L57_FuncTrans"+
+  +"ferParameter *G_trans;\r\n  L57_FuncTransferParameter *V_trans;\r\n  // Сб"+
+  +"рос\r\n  void L57_Reset_Trans_Data(void)\r\n  {\r\n    L_trans=NULL;\r\n    L0"+
+  +"_trans=NULL;\r\n    r_trans=NULL;\r\n    G_trans=NULL;\r\n    V_trans=NULL;\r"+
+  +"\n  };\r\n  // Создание всех параметров передачи\r\n  void L57_Create_Trans"+
+  +"_Data(void);\r\n\r\n  // Хранилища для проверки изменения переменных\r\n  do"+
+  +"uble L_old;\r\n  double L0_old;\r\n  double r_old;\r\n  double G_old;\r\n  dou"+
+  +"ble V_old;\r\n  // Инициализация хранилищ значений\r\n  void L57_Init_Old_"+
+  +"Data(void)\r\n  {\r\n    L_old=rdsbcppHugeDouble;\r\n    L0_old=rdsbcppHugeD"+
+  +"ouble;\r\n    r_old=rdsbcppHugeDouble;\r\n    G_old=rdsbcppHugeDouble;\r\n  "+
+  +"  V_old=rdsbcppHugeDouble;\r\n  };\r\n\r\n  // Выходные таблицы argmax(x)\r\n "+
+  +" L57_Table1ArgFuncData _OneargArgMaxF[L57_ONEARG_ARGMAX_CNT];\r\n\r\n\r\n$CL"+
+  +"ASSEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования по"+
+  +"льзователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_"+
+  +"AFTERCLASS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_AFTERC"+
+  +"LASS\r\n\r\n// Экспорт текста функции для взаимодействия с другими блоками"+
+  +" по связям\r\nchar *rdsbcppBlockClass::_FuncExportText=\"V G V \\n\"\r\n\"V L "+
+  +"V 0\\n\"\r\n\"V L0 V 0\\n\"\r\n\"V r V 0\\n\"\r\n\"V V V \\n\"\r\n\"V Y V 0\\n\"\r\n\"F\\n\"\r\n\"T\\"+
+  +"n\"\r\n\"X\\n\"\r\n\"|if (L0*Y<=V) \\n\"\r\n\"|\\treturn V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)"+
+  +"*V;\\n\"\r\n\"|return 0;\\n\"\r\n\"}\\n\"\r\n\"#ORDER#\\n\"\r\n\"Y\\n\"\r\n\"L\\n\"\r\n\"L0\\n\"\r\n\"r\\n"+
+  +"\"\r\n\"G\\n\"\r\n\"V\";\r\n\r\n// Инициализация фиксированных значений\r\nvoid rdsbcp"+
+  +"pBlockClass::L57_Init_Fixed_Data(void)\r\n{\r\n    Y_0=0;\r\n    Y_min=0;\r\n "+
+  +"   Y_max=50;\r\n    Y_step=0.1;\r\n    Y_end=0.01;\r\n\r\n}\r\n//---------------"+
+  +"--------------------------------------------------------\r\n\r\n// Создани"+
+  +"е всех параметров передачи\r\nvoid rdsbcppBlockClass::L57_Create_Trans_D"+
+  +"ata(void)\r\n{\r\n  // Стационарных входов: 5\r\n  // Максимизируемых параме"+
+  +"тров: 1\r\n  _Transfer.ClearParameters();\r\n  _Transfer.EnlargeParameters"+
+  +"(5+1*5);\r\n\r\n  L_trans=_Transfer.AddParameterRds(\"L\",L57_VARSUFFIX_NONE"+
+  +",FALSE,L.Num(),&L);\r\n  L0_trans=_Transfer.AddParameterRds(\"L0\",L57_VAR"+
+  +"SUFFIX_NONE,FALSE,L0.Num(),&L0);\r\n  r_trans=_Transfer.AddParameterRds("+
+  +"\"r\",L57_VARSUFFIX_NONE,FALSE,r.Num(),&r);\r\n  G_trans=_Transfer.AddPara"+
+  +"meterRds(\"G\",L57_VARSUFFIX_NONE,FALSE,G.Num(),&G);\r\n  V_trans=_Transfe"+
+  +"r.AddParameterRds(\"V\",L57_VARSUFFIX_NONE,FALSE,V.Num(),&V);\r\n\r\n  _Tran"+
+  +"sfer.AddParameter(\"Y\",L57_VARSUFFIX_0,FALSE,-1,&Y_0);\r\n  _Transfer.Add"+
+  +"Parameter(\"Y\",L57_VARSUFFIX_MIN,FALSE,-1,&Y_min);\r\n  _Transfer.AddPara"+
+  +"meter(\"Y\",L57_VARSUFFIX_MAX,FALSE,-1,&Y_max);\r\n  _Transfer.AddParamete"+
+  +"r(\"Y\",L57_VARSUFFIX_STEP,FALSE,-1,&Y_step);\r\n  _Transfer.AddParameter("+
+  +"\"Y\",L57_VARSUFFIX_END,FALSE,-1,&Y_end);\r\n\r\n}\r\n//----------------------"+
+  +"-------------------------------------------------\r\n\r\n// Проверка измен"+
+  +"ения переменных\r\n// *pChgSignalOn взводится при наличии сигнала измене"+
+  +"ния (независимо от фактического изменения)\r\nBOOL rdsbcppBlockClass::L5"+
+  +"7InputsChange(BOOL _force,BOOL *pChgSignalOn)\r\n{ BOOL _changes=FALSE;\r"+
+  +"\n\r\n  // Стационарных вещественных входов: 5\r\n  // Служебных вещественн"+
+  +"ых входов: 0\r\n  // Итого вещественных: 5\r\n\r\n  // Вещественные входы\r\n "+
+  +" if(_allinval_dchg!=0 || _force)\r\n    { _allinval_dchg=0;\r\n      _chan"+
+  +"ges=_force;\r\n      if(pChgSignalOn) *pChgSignalOn=TRUE;\r\n\r\n      if(L_"+
+  +"old!=L)\r\n        { _changes=TRUE;\r\n          _Transfer.TransferParamet"+
+  +"er(rdsbcppBlockData->Block,L_trans,_Transfer.DestBlocks,TRUE);\r\n      "+
+  +"  }\r\n      if(L0_old!=L0)\r\n        { _changes=TRUE;\r\n          _Transf"+
+  +"er.TransferParameter(rdsbcppBlockData->Block,L0_trans,_Transfer.DestBl"+
+  +"ocks,TRUE);\r\n        }\r\n      if(r_old!=r)\r\n        { _changes=TRUE;\r\n"+
+  +"          _Transfer.TransferParameter(rdsbcppBlockData->Block,r_trans,"+
+  +"_Transfer.DestBlocks,TRUE);\r\n        }\r\n      if(G_old!=G)\r\n        { "+
+  +"_changes=TRUE;\r\n          _Transfer.TransferParameter(rdsbcppBlockData"+
+  +"->Block,G_trans,_Transfer.DestBlocks,TRUE);\r\n        }\r\n      if(V_old"+
+  +"!=V)\r\n        { _changes=TRUE;\r\n          _Transfer.TransferParameter("+
+  +"rdsbcppBlockData->Block,V_trans,_Transfer.DestBlocks,TRUE);\r\n        }"+
+  +"\r\n\r\n\r\n      if(_changes)\r\n        { // Запоминание изменившихся\r\n     "+
+  +"     L_old=L;\r\n          L0_old=L0;\r\n          r_old=r;\r\n          G_o"+
+  +"ld=G;\r\n          V_old=V;\r\n        }\r\n    }\r\n\r\n  // Матричные входы (м"+
+  +"атрицы, массивы, функции)\r\n\r\n  return _changes;\r\n}\r\n//----------------"+
+  +"-------------------------------------------------------\r\n\r\n// Занесени"+
+  +"е стационарных переменных в вычислитель функции\r\nvoid rdsbcppBlockClas"+
+  +"s::L57InputsToCalc(void)\r\n{\r\n  _Calculator.L=L;\r\n  _Calculator.L0=L0;\r"+
+  +"\n  _Calculator.r=r;\r\n  _Calculator.G=G;\r\n  _Calculator.V=V;\r\n}\r\n//----"+
+  +"-------------------------------------------------------------------\r\n\r"+
+  +"\n// Инициализация набора максимизируемых параметров\r\nvoid rdsbcppBlock"+
+  +"Class::L57InitParams(void)\r\n{\r\n  _Params.P[0].FuncVal=Y_0; // 0\r\n  _Pa"+
+  +"rams.P[0].Min=Y_min; // 0\r\n  _Params.P[0].Max=Y_max; // 50\r\n  _Params."+
+  +"P[0].StartStep=Y_step; // 0.1\r\n  _Params.P[0].EndStep=Y_end; // 0.01\r\n"+
+  +"\r\n}\r\n//---------------------------------------------------------------"+
+  +"--------\r\n\r\n// Занесение текущих значений параметров в вычислитель фун"+
+  +"кции\r\nvoid rdsbcppBlockClass::L57ParamsToCalc(void)\r\n{\r\n  _Calculator."+
+  +"Y=_Params.P[0].Current;\r\n}\r\n//----------------------------------------"+
+  +"-------------------------------\r\n\r\n// Установить готовность всех прост"+
+  +"ых табличных функций\r\nvoid rdsbcppBlockClass::_SetAllSimpleTableFuncRe"+
+  +"ady(char flag)\r\n{\r\n}\r\n//----------------------------------------------"+
+  +"-------------------------\r\n\r\n// Очистить выходные матрицы всех табличн"+
+  +"ых функций\r\nvoid rdsbcppBlockClass::_ClearAllTableFunc(void)\r\n{\r\n  arg"+
+  +"max_func.Resize(0,0);\r\n}\r\n//------------------------------------------"+
+  +"-----------------------------\r\n\r\n\r\n\r\n// Заполнение массива генерации в"+
+  +"ыходных таблиц argmax(x)\r\nBOOL rdsbcppBlockClass::_OneargArgMaxF_fill("+
+  +"void)\r\n{ L57_Table1ArgFuncData *f;\r\n  L57_Parameter *p;\r\n  L57_TableFi"+
+  +"ller *t;\r\n\r\n  f=_OneargArgMaxF+0;\r\n  p=_Params.P+0; // Y\r\n    f->ArgsA"+
+  +"rray=&(p->Array);\r\n    f->ArgIndex=0; // Y\r\n    f->NResults=1+1; // Зн"+
+  +"ачения всех аргументов и самой функции\r\n    if(!f->AllocateResultArray"+
+  +"s()) return FALSE;\r\n      // Выходная матрица argmax_func (столбцов ре"+
+  +"зультатов: 1)\r\n      t=f->Output.Add1Arg(&argmax_func,NULL,1);\r\n      "+
+  +"// L57_ERROR()\r\n      t->MatrCol[0]=0+1;\r\n      t->ResultN[0]=1;\r\n\r\n  "+
+  +"return TRUE;\r\n}\r\n//---------------------------------------------------"+
+  +"--------------------\r\n\r\n\r\n// Переписать максимумы из AllMax_out в отде"+
+  +"льные массивы (генерируется)\r\nBOOL rdsbcppBlockClass::L57AllMaxToArray"+
+  +"s(void)\r\n{\r\n#ifdef L57_PARAMSCOUNT\r\n  int n_max=AllMax_out.Rows();\r\n  "+
+  +"// Аргументы\r\n  if(!Y_res.Resize(n_max))\r\n    return FALSE;\r\n  for(int"+
+  +" i=0;i<n_max;i++)\r\n    Y_res[i]=AllMax_out[i][0];\r\n\r\n  // Значения\r\n  "+
+  +"if(!_max_res.Resize(n_max))\r\n    return FALSE;\r\n  for(int i=0;i<n_max;"+
+  +"i++)\r\n    _max_res[i]=AllMax_out[i][L57_PARAMSCOUNT];\r\n\r\n  // Фильтров"+
+  +"анные данные\r\n  if(n_max)\r\n    { BOOL _fchg=FALSE;\r\n      double _v,_v"+
+  +"n;\r\n      if(!_fchg)\r\n        { _v=Y_res_f;\r\n          _vn=Y_res[0];\r\n"+
+  +"          if(_v==rdsbcppHugeDouble || (_vn!=rdsbcppHugeDouble && fabs("+
+  +"_v-_vn)>_Params.P[0].EndStep*1.1) )\r\n            _fchg=TRUE;\r\n        "+
+  +"}\r\n      if((!_fchg) && DfFilter_setup!=rdsbcppHugeDouble)\r\n        { "+
+  +"_v=_max_res_f;\r\n          _vn=_max_res[0];\r\n          if(_v==rdsbcppHu"+
+  +"geDouble || (_vn!=rdsbcppHugeDouble && fabs(_v-_vn)>DfFilter_setup) )\r"+
+  +"\n            _fchg=TRUE;\r\n        }\r\n\r\n      if(_fchg)\r\n        {\r\n   "+
+  +"       Y_res_f=Y_res[0];\r\n          _max_res_f=_max_res[0];\r\n        }"+
+  +"\r\n    }\r\n#endif // ifdef L57_PARAMSCOUNT\r\n\r\n  return TRUE;\r\n}\r\n//-----"+
+  +"------------------------------------------------------------------\r\n\r\n"+
+  +"\r\n$INIT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования п"+
+  +"ользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS"+
+  +"_INIT\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_INIT\r\n\r\n$ST"+
+  +"ART\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования польз"+
+  +"ователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_STA"+
+  +"RT\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_START\r\n\r\n$CALC"+
+  +"MODE\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования поль"+
+  +"зователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_CA"+
+  +"LCMODE\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_CALCMODE\r\n"+
+  +"\r\n$LOADTEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирован"+
+  +"ия пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L"+
+  +"57MS_LOADPARAMS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_L"+
+  +"OADPARAMS\r\n$SAVETEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для ред"+
+  +"актирования пользователем,\r\nее текст генерируется автоматически */\r\n\r\n"+
+  +"#define L57MS_SAVEPARAMS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#unde"+
+  +"f L57MS_SAVEPARAMS\r\n\r\n$OTHER\r\n/* ВНИМАНИЕ! Эта модель не предназначена"+
+  +" для редактирования пользователем,\r\nее текст генерируется автоматическ"+
+  +"и */\r\n\r\n#define L57MS_OTHER\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#u"+
+  +"ndef L57MS_OTHER\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.IsFuncSource\"\r\n/* "+
+  +"ВНИМАНИЕ! Эта модель не предназначена для редактирования пользователем"+
+  +",\r\nее текст генерируется автоматически */\r\n\r\nResult=1;\r\n\r\n$FUNC \"IPU.L"+
+  +"57.UserFuncTransfer.AcceptFunction\"\r\n/* ВНИМАНИЕ! Эта модель не предна"+
+  +"значена для редактирования пользователем,\r\nее текст генерируется автом"+
+  +"атически */\r\n\r\n#define L57MS_ACCEPTFUNC\r\n#include <RdsL57Mk2/L57Mk2Arg"+
+  +"Max.cpp>\r\n#undef L57MS_ACCEPTFUNC\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.A"+
+  +"cceptParameter\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактир"+
+  +"ования пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#defi"+
+  +"ne L57MS_ACCEPTPARAM\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L5"+
+  +"7MS_ACCEPTPARAM\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.IsParameterTransfer"+
+  +"redWithFunc\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирова"+
+  +"ния пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define "+
+  +"L57MS_CHECKTRANSFUNC\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L5"+
+  +"7MS_CHECKTRANSFUNC\r\n\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.CheckParamTran"+
+  +"sfer\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пол"+
+  +"ьзователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_C"+
+  +"HECKTRANSFUNC2\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_CH"+
+  +"ECKTRANSFUNC2\r\n\r\n\r\n$RESET\r\n/* ВНИМАНИЕ! Эта модель не предназначена дл"+
+  +"я редактирования пользователем,\r\nее текст генерируется автоматически *"+
+  +"/\r\n\r\n#define L57MS_RESET\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#unde"+
+  +"f L57MS_RESET\r\n\r\n\r\n$VARCHECK\r\n/* ВНИМАНИЕ! Эта модель не предназначена"+
+  +" для редактирования пользователем,\r\nее текст генерируется автоматическ"+
+  +"и */\r\n\r\n#define L57MS_VARCHECK\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r"+
+  +"\n#undef L57MS_VARCHECK\r\n\r\n$DRAWADD\r\n/* ВНИМАНИЕ! Эта модель не предназ"+
+  +"начена для редактирования пользователем,\r\nее текст генерируется автома"+
+  +"тически */\r\n\r\n#define L57MS_DRAWADDITIONAL\r\n#include <RdsL57Mk2/L57Mk2"+
+  +"ArgMax.cpp>\r\n#undef L57MS_DRAWADDITIONAL\r\n\r\n$HINT\r\n/* ВНИМАНИЕ! Эта мо"+
+  +"дель не предназначена для редактирования пользователем,\r\nее текст гене"+
+  +"рируется автоматически */\r\n\r\n#define L57MS_HINT\r\n#include <RdsL57Mk2/L"+
+  +"57Mk2ArgMax.cpp>\r\n#undef L57MS_HINT\r\n\r\n$POPUP\r\n/* ВНИМАНИЕ! Эта модель"+
+  +" не предназначена для редактирования пользователем,\r\nее текст генериру"+
+  +"ется автоматически */\r\n\r\n#define L57MS_POPUP\r\n#include <RdsL57Mk2/L57M"+
+  +"k2ArgMax.cpp>\r\n#undef L57MS_POPUP\r\n\r\n\r\n$HIDDEN\r\n{N\r\n W64,64,64,64,64\r\n"+
+  +" {V\r\n  NY\r\n  TV\r\n  V=0\r\n  [=0\r\n  ]=50\r\n  D=0.1\r\n  E=0.01\r\n }\r\n}\r\n{I\r\n "+
+  +"W64,64,64\r\n {V\r\n  NL\r\n  TV\r\n  V=0\r\n }\r\n {V\r\n  NL0\r\n  TV\r\n  V=0\r\n }\r\n {"+
+  +"V\r\n  Nr\r\n  TV\r\n  V=0\r\n }\r\n {V\r\n  NG\r\n  TV\r\n  V=\r\n }\r\n {V\r\n  NV\r\n  TV\r\n"+
+  +"  V=\r\n }\r\n}\r\n{F\r\n {F0\r\n  T\r\n  V\r\n  I0\r\n  C\r\n  |if (L0*Y<=V) \r\n  |	retu"+
+  +"rn V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)*V;\r\n  |return 0;\r\n }\r\n}\r\n{T\r\n W81,93,7"+
+  +"2,76\r\n {F\r\n  Nargmax\r\n  Tmax\r\n  AY\r\n  R%0\r\n }\r\n}\r\n{O\r\n :EndStep=1\r\n}\r\n"+
+  +"$OPTIONS\r\n  tabs $GLOBAL\r\n  window pos 18 164 size 1214 837 hdiv 337 v"+
+  +"div 356 fdiv 334 hidevar\r\n  svc 0 90 1 73 2 90 3 90\r\n  dvc 0 90 1 90 2"+
+  +" 90\r\n  fnc 0 90 1 90 2 90\r\n  pvc 0 90 1 90 2 100\r\n  dvcheck 1\r\n  index"+
+  +"check 0\r\n  ignorewarnings 1\r\n  errorretrycompile 1\r\n  customerrmsg 1 s"+
+  +"howblock\r\n  customerrtransl \"$CURLANG$\\Dll\\L57.bin\" \"L57mdl\" \"CustomEr"+
+  +"rSingleFunc\"\r\n  autoreadonlyeditor 1\r\n  genvartypemacros 0\r\n  matherr "+
+  +"1\r\n  catchall 0\r\n  dvstart 1\r\n  searchlinks off\r\n  undefvars 1\r\n\r\n" 
+  object name "L57_FCalc1.mdl" type "ICS.l49.Common.dll.bcpp55.model.scheme.$BC55MODEL" id 0 string "$BC55MODEL\r\n#substlang \"English\"\r\n|Автоматически генерируемая модель п"+
+  +"ростого вычислителя функции\r\n>English\r\n|Automatically generated model "+
+  +"of simple function calculation\r\n$NOSHARE\r\n$VARS\r\n  signal name \"_Start"+
+  +"\" in run default 1\r\n  signal name \"_Ready\" out default 0\r\n  short name"+
+  +" \"Aux_in\" in hide default 0\r\n  short name \"Aux_out\" out hide default 0"+
+  +"\r\n  char name \"Func_in\" in menu default \"\"\r\n  char name \"Func_out\" out"+
+  +" menu default \"\"\r\n      double name \"Calc_out\" out menu default \"?\"\r\n "+
+  +" signal name \"_allinval_dchg\" default 1\r\n  double name \"f\" in menu run"+
+  +" default \"\"\r\n  double name \"fopt\" in menu run default \"\"\r\n\r\n$AUTO\r\n   "+
+  +" \"f\",\"_allinval_dchg\"\r\n    \"fopt\",\"_allinval_dchg\"\r\n$PARAM\r\n  int name"+
+  +" \"TR_params\" default \"0\"\r\n  rdsbcppString name \"TR_text\" default \"\" no"+
+  +"translate\r\n$REGFUN\r\n  name \"IPU.L57.UserFuncTransfer.IsFuncSource\" id "+
+  +"\"L57_BlkFunc_IsFuncSource\"\r\n  name \"IPU.L57.UserFuncTransfer.AcceptFun"+
+  +"ction\" id \"L57_BlkFunc_AcceptFunc\" param \"L57_AcceptFunc_Param*\"\r\n  na"+
+  +"me \"IPU.L57.UserFuncTransfer.AcceptParameter\" id \"L57_BlkFunc_AcceptPa"+
+  +"ram\" param \"L57_AcceptParam_Param*\"\r\n  name \"IPU.L57.UserFuncTransfer."+
+  +"IsParameterTransferredWithFunc\" id \"L57_BlkFunc_CheckTransParam\" param"+
+  +" \"L57_CheckParamConn_Param*\"\r\n  name \"IPU.L57.UserFuncTransfer.CheckPa"+
+  +"ramTransfer\" id \"L57_BlkFunc_CheckTransParam2\" param \"L57_CheckTranser"+
+  +"_Param*\"\r\n$LINKS\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2SimpleCalc.cp"+
+  +"p\"\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2Basic.cpp\"\r\n  manual \"$RDSI"+
+  +"NCLUDE$\\RdsL57Mk2\\L57Mk2Basic.h\"\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57"+
+  +"Mk2Bits.cpp\"\r\n$CUSTOMERR\r\n|В одном из описаний функций обнаружена ошиб"+
+  +"ка: видимо, текст функции написан не в синтаксисе языка C. Пожалуйста,"+
+  +" проверьте все описания в настройках блока или откройте редактор модел"+
+  +"и и изучите ошибки, выданные компилятором.\r\n$STRINGS\r\n  id \"L57_MSGCAP"+
+  +"TION\" text \"Вычисление функции\" lf bin \"$CURLANG$\\Dll\\L57.bin\" \"SemiAu"+
+  +"toSimpleFunc\" \"ModelMessagesCaption\"\r\n$ENDDECL\r\n$GLOBAL\r\n/* ВНИМАНИЕ! "+
+  +"Эта модель не предназначена для редактирования пользователем,\r\nее текс"+
+  +"т генерируется автоматически\r\n   ATTENTION! This model is generated au"+
+  +"tomatically, do not edit it */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"+
+  +"\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// Версия модели (в норме должна соотв"+
+  +"етствовать L57_LATESTMODELVERSION)\r\n#define L57_MODELVERSION 16\r\n\r\n// "+
+  +"Файл и тема справки\r\n#define L57_HELPUIFILE \"Blocks\\\\L57.ui\"\r\n#define "+
+  +"L57_HELPTOPIC \"L57Mk2SimpleCalc\"\r\n\r\n// Заголовки функций для индикации"+
+  +"\r\n#define L57_TITLES \"\"\r\n\r\n// Тела функций для индикации\r\n#define L57_"+
+  +"PROGRAMS \"e=100*(f/fopt);\\r\\nif (e<0) \\r\\n\\te=0;\\r\\nelse if (e>100)\\r\\"+
+  +"n\\te=100;\"\r\n\r\n#define L57MS_GLOBALS\r\n#include <RdsL57Mk2/L57Mk2SimpleC"+
+  +"alc.cpp>\r\n#undef L57MS_GLOBALS\r\n\r\n\r\n// Служебный класс для вычисления "+
+  +"значения функции\r\n#define ERRORVALUE (L57_ERROR())\r\n#define L57_CALCCL"+
+  +"ASSNAME L57_Calc\r\n#define L57_CALCTYPE_VALUE\r\nclass L57_Calc\r\n{\r\n  pub"+
+  +"lic:\r\n    inline double L57_ERROR(void){return rdsbcppHugeDouble;};\r\n "+
+  +"   double f;\r\n    double fopt;\r\n    // Функция вычисления (генерируема"+
+  +"я)\r\n    double _Calc_gen(void);\r\n    // Функция вычисления double (с п"+
+  +"ерехватом исключений)\r\n    double _Calc_main(void)\r\n    { double __tem"+
+  +"p;\r\n      RDSBCPP_TRY\r\n        { __temp=_Calc_gen(); }\r\n      RDSBCPP_"+
+  +"CATCHALL\r\n        { __temp=rdsbcppHugeDouble; }\r\n      return __temp;\r"+
+  +"\n    };\r\n    // Функция вычисления исходного типа (с перехватом исключ"+
+  +"ений)\r\n    double _Calc_original(void)\r\n{ return _Calc_main(); };\r\n};\r"+
+  +"\n// Функция вычисления (генерируемая)\r\ndouble L57_Calc::_Calc_gen(void"+
+  +")\r\n{\r\n  #define L57_ORIGPARAM(x) (L57_CALCCLASSNAME::x)\r\n  double e;\r\n"+
+  +"  #ifndef BCPP55_ERRORRETRYCOMPILE\r\ne=100*(f/fopt);\r\nif (e<0) \r\n	e=0;\r"+
+  +"\nelse if (e>100)\r\n	e=100;\r\n  #endif // ifndef BCPP55_ERRORRETRYCOMPILE"+
+  +"\r\n; /* */\r\n  return e;\r\n  #undef L57_ORIGPARAM\r\n}\r\n#undef L57_CALCCLAS"+
+  +"SNAME\r\n#undef ERRORVALUE\r\n//------------------------------------------"+
+  +"----------------------------\r\n\r\n$MODEL\r\n/* ВНИМАНИЕ! Эта модель не пре"+
+  +"дназначена для редактирования пользователем,\r\nее текст генерируется ав"+
+  +"томатически */\r\n\r\n#define L57MS_MODEL\r\n#include <RdsL57Mk2/L57Mk2Simpl"+
+  +"eCalc.cpp>\r\n#undef L57MS_MODEL\r\n\r\n    Calc_out=_Calculator._Calc_main("+
+  +");\r\n\r\n\r\n\r\n\r\n\r\n\r\n$SETUP\r\n/* ВНИМАНИЕ! Эта модель не предназначена для р"+
+  +"едактирования пользователем,\r\nее текст генерируется автоматически */\r\n"+
+  +"\r\n#define L57MS_SETUP\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#und"+
+  +"ef L57MS_SETUP\r\n\r\n$CLASSDEF\r\n/* ВНИМАНИЕ! Эта модель не предназначена "+
+  +"для редактирования пользователем,\r\nее текст генерируется автоматически"+
+  +" */\r\n\r\n#define L57MS_CLASS\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r"+
+  +"\n#undef L57MS_CLASS\r\n\r\n  // Объекты для передачи входов-параметров фун"+
+  +"кции\r\n  L57_FuncTransfer _Transfer;\r\n  L57_FuncTransferParameter *f_tr"+
+  +"ans;\r\n  L57_FuncTransferParameter *fopt_trans;\r\n  // Сброс\r\n  void L57"+
+  +"_Reset_Trans_Data(void)\r\n  {\r\n    f_trans=NULL;\r\n    fopt_trans=NULL;\r"+
+  +"\n  };\r\n  // Создание всех параметров передачи\r\n  void L57_Create_Trans"+
+  +"_Data(void);\r\n\r\n  // Хранилища для проверки изменения переменных\r\n  do"+
+  +"uble f_old;\r\n  double fopt_old;\r\n  // Инициализация хранилищ значений\r"+
+  +"\n  void L57_Init_Old_Data(void)\r\n  {\r\n    f_old=rdsbcppHugeDouble;\r\n  "+
+  +"  fopt_old=rdsbcppHugeDouble;\r\n  };\r\n\r\n$CLASSEXT\r\n/* ВНИМАНИЕ! Эта мод"+
+  +"ель не предназначена для редактирования пользователем,\r\nее текст генер"+
+  +"ируется автоматически */\r\n\r\n#define L57MS_AFTERCLASS\r\n#include <RdsL57"+
+  +"Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_AFTERCLASS\r\n\r\n// Экспорт текст"+
+  +"а функции для взаимодействия с другими блоками по связям\r\nchar *rdsbcp"+
+  +"pBlockClass::_FuncExportText=\"V f V \\n\"\r\n\"V fopt V \\n\"\r\n\"F\\n\"\r\n\"T\\n\"\r\n"+
+  +"\"Xe\\n\"\r\n\"|e=100*(f/fopt);\\n\"\r\n\"|if (e<0) \\n\"\r\n\"|\\te=0;\\n\"\r\n\"|else if ("+
+  +"e>100)\\n\"\r\n\"|\\te=100;\\n\"\r\n\"}\\n\"\r\n\"#ORDER#\\n\"\r\n\"f\\n\"\r\n\"fopt\";\r\n\r\n// Зан"+
+  +"есение стационарных переменных в вычислитель функции\r\nvoid rdsbcppBloc"+
+  +"kClass::L57InputsToCalc(void)\r\n{\r\n  _Calculator.f=f;\r\n  _Calculator.fo"+
+  +"pt=fopt;\r\n}\r\n//-------------------------------------------------------"+
+  +"----------------\r\n\r\n// Создание всех параметров передачи\r\nvoid rdsbcpp"+
+  +"BlockClass::L57_Create_Trans_Data(void)\r\n{\r\n  // Стационарных входов: "+
+  +"2\r\n  _Transfer.ClearParameters();\r\n  _Transfer.EnlargeParameters(2);\r\n"+
+  +"\r\n  f_trans=_Transfer.AddParameterRds(\"f\",L57_VARSUFFIX_NONE,FALSE,f.N"+
+  +"um(),&f);\r\n  fopt_trans=_Transfer.AddParameterRds(\"fopt\",L57_VARSUFFIX"+
+  +"_NONE,FALSE,fopt.Num(),&fopt);\r\n\r\n}\r\n//-------------------------------"+
+  +"----------------------------------------\r\n\r\n// Проверка изменения пере"+
+  +"менных и передача параметров\r\nvoid rdsbcppBlockClass::L57InputsChange("+
+  +"void)\r\n{ BOOL _changes=FALSE;\r\n\r\n  // Стационарных вещественных входов"+
+  +": 2\r\n  // Служебных вещественных входов: 0\r\n  // Итого вещественных: 2"+
+  +"\r\n\r\n  // Вещественные входы\r\n  if(_allinval_dchg!=0)\r\n    { _allinval_"+
+  +"dchg=0;\r\n      _changes=FALSE;\r\n\r\n      if(f_old!=f)\r\n        { _chang"+
+  +"es=TRUE;\r\n          _Transfer.TransferParameter(rdsbcppBlockData->Bloc"+
+  +"k,f_trans,_Transfer.DestBlocks,TRUE);\r\n        }\r\n      if(fopt_old!=f"+
+  +"opt)\r\n        { _changes=TRUE;\r\n          _Transfer.TransferParameter("+
+  +"rdsbcppBlockData->Block,fopt_trans,_Transfer.DestBlocks,TRUE);\r\n      "+
+  +"  }\r\n\r\n      if(_changes)\r\n        { // Запоминание изменившихся\r\n    "+
+  +"      f_old=f;\r\n          fopt_old=fopt;\r\n        }\r\n    }\r\n\r\n  // Мат"+
+  +"ричные входы (матрицы, массивы, функции)\r\n\r\n}\r\n//---------------------"+
+  +"--------------------------------------------------\r\n\r\n$INIT\r\n/* ВНИМАН"+
+  +"ИЕ! Эта модель не предназначена для редактирования пользователем,\r\nее "+
+  +"текст генерируется автоматически */\r\n\r\n#define L57MS_INIT\r\n#include <R"+
+  +"dsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_INIT\r\n\r\n\r\n$START\r\n/* ВНИМ"+
+  +"АНИЕ! Эта модель не предназначена для редактирования пользователем,\r\nе"+
+  +"е текст генерируется автоматически */\r\n\r\n#define L57MS_START\r\n#include"+
+  +" <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_START\r\n\r\n$CALCMODE\r\n/*"+
+  +" ВНИМАНИЕ! Эта модель не предназначена для редактирования пользователе"+
+  +"м,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_CALCMODE\r\n"+
+  +"#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_CALCMODE\r\n\r\n$L"+
+  +"OADTEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования п"+
+  +"ользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS"+
+  +"_LOADPARAMS\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_L"+
+  +"OADPARAMS\r\n$SAVETEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для ред"+
+  +"актирования пользователем,\r\nее текст генерируется автоматически */\r\n\r\n"+
+  +"#define L57MS_SAVEPARAMS\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#"+
+  +"undef L57MS_SAVEPARAMS\r\n$OTHER\r\n/* ВНИМАНИЕ! Эта модель не предназначе"+
+  +"на для редактирования пользователем,\r\nее текст генерируется автоматиче"+
+  +"ски */\r\n\r\n#define L57MS_OTHER\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cp"+
+  +"p>\r\n#undef L57MS_OTHER\r\n$FUNC \"IPU.L57.UserFuncTransfer.IsFuncSource\"\r"+
+  +"\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пользоват"+
+  +"елем,\r\nее текст генерируется автоматически */\r\n\r\nResult=1;\r\n$FUNC \"IPU"+
+  +".L57.UserFuncTransfer.AcceptFunction\"\r\n/* ВНИМАНИЕ! Эта модель не пред"+
+  +"назначена для редактирования пользователем,\r\nее текст генерируется авт"+
+  +"оматически */\r\n\r\n#define L57MS_ACCEPTFUNC\r\n#include <RdsL57Mk2/L57Mk2S"+
+  +"impleCalc.cpp>\r\n#undef L57MS_ACCEPTFUNC\r\n\r\n$FUNC \"IPU.L57.UserFuncTran"+
+  +"sfer.AcceptParameter\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для ре"+
+  +"дактирования пользователем,\r\nее текст генерируется автоматически */\r\n\r"+
+  +"\n#define L57MS_ACCEPTPARAM\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r"+
+  +"\n#undef L57MS_ACCEPTPARAM\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.IsParamet"+
+  +"erTransferredWithFunc\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для р"+
+  +"едактирования пользователем,\r\nее текст генерируется автоматически */\r\n"+
+  +"\r\n#define L57MS_CHECKTRANSFUNC\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.c"+
+  +"pp>\r\n#undef L57MS_CHECKTRANSFUNC\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.Ch"+
+  +"eckParamTransfer\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редакт"+
+  +"ирования пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#de"+
+  +"fine L57MS_CHECKTRANSFUNC2\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r"+
+  +"\n#undef L57MS_CHECKTRANSFUNC2\r\n\r\n\r\n$VARCHECK\r\n/* ВНИМАНИЕ! Эта модель "+
+  +"не предназначена для редактирования пользователем,\r\nее текст генерируе"+
+  +"тся автоматически */\r\n\r\n#define L57MS_VARCHECK\r\n#include <RdsL57Mk2/L5"+
+  +"7Mk2SimpleCalc.cpp>\r\n#undef L57MS_VARCHECK\r\n\r\n$RESET\r\n/* ВНИМАНИЕ! Эта"+
+  +" модель не предназначена для редактирования пользователем,\r\nее текст г"+
+  +"енерируется автоматически */\r\n\r\n#define L57MS_RESET\r\n#include <RdsL57M"+
+  +"k2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_RESET\r\n\r\n$DRAWADD\r\n/* ВНИМАНИЕ!"+
+  +" Эта модель не предназначена для редактирования пользователем,\r\nее тек"+
+  +"ст генерируется автоматически */\r\n\r\n#define L57MS_DRAWADDITIONAL\r\n#inc"+
+  +"lude <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_DRAWADDITIONAL\r\n\r\n"+
+  +"$HINT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пол"+
+  +"ьзователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_H"+
+  +"INT\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_HINT\r\n\r\n$"+
+  +"POPUP\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пол"+
+  +"ьзователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_P"+
+  +"OPUP\r\n#include <RdsL57Mk2/L57Mk2SimpleCalc.cpp>\r\n#undef L57MS_POPUP\r\n\r"+
+  +"\n\r\n$HIDDEN\r\n{I\r\n W64,64,64\r\n {V\r\n  Nf\r\n  TV\r\n  V=\r\n }\r\n {V\r\n  Nfopt\r\n "+
+  +" TV\r\n  V=\r\n }\r\n}\r\n{F\r\n {F0\r\n  T\r\n  Ve\r\n  I0\r\n  C\r\n  |e=100*(f/fopt);\r\n"+
+  +"  |if (e<0) \r\n  |	e=0;\r\n  |else if (e>100)\r\n  |	e=100;\r\n }\r\n}\r\n$OPTION"+
+  +"S\r\n  tabs $GLOBAL\r\n  window pos 18 164 size 1214 837 hdiv 337 vdiv 356"+
+  +" fdiv 334 hidevar\r\n  svc 0 90 1 73 2 90 3 90\r\n  dvc 0 90 1 90 2 90\r\n  "+
+  +"fnc 0 90 1 90 2 90\r\n  pvc 0 90 1 90 2 100\r\n  dvcheck 1\r\n  indexcheck 0"+
+  +"\r\n  ignorewarnings 1\r\n  customerrmsg 1 showblock\r\n  customerrtransl \"$"+
+  +"CURLANG$\\Dll\\L57.bin\" \"L57mdl\" \"CustomErrSingleFunc\"\r\n  autoreadonlyed"+
+  +"itor 1\r\n  genvartypemacros 0\r\n  matherr 1\r\n  catchall 0\r\n  dvstart 1\r\n"+
+  +"  errorretrycompile 1\r\n  searchlinks off\r\n  undefvars 1\r\n" 
+  object name "L57_ArgMax1.mdl" type "ICS.l49.Common.dll.bcpp55.model.scheme.$BC55MODEL" id 0 string "$BC55MODEL\r\n#substlang \"English\"\r\n|Автоматически генерируемая модель п"+
+  +"олуавтокомпилируемого внутреннего максимизатора\r\n>English\r\n|Automatica"+
+  +"lly generated model of user-defined function maximizer\r\n$NOSHARE\r\n$VAR"+
+  +"S\r\n  signal name \"_Start\" in run default 1\r\n  signal name \"_Ready\" out"+
+  +" default 0\r\n  short name \"Aux_in\" in hide default 0\r\n  short name \"Aux"+
+  +"_out\" out hide default 0\r\n  signal name \"Start_cmd\" in menu run defaul"+
+  +"t 0\r\n  signal name \"Restart_cmd\" in menu run default 0\r\n  matrix logic"+
+  +"al oneindex name \"Enabled_in\" in run default \"[ ] 0\"\r\n  signal name \"_"+
+  +"Enabled_chg\" default 1\r\n  int name \"_Stage\" out default 0\r\n  int name "+
+  +"\"_SubStage\" out default 0\r\n  logical name \"_results_ok\" default 0\r\n  l"+
+  +"ogical name \"_enabled_res\" default 1\r\n  logical name \"Complete_out\" ou"+
+  +"t default 0\r\n  logical name \"Error_out\" out default 0\r\n  signal name \""+
+  +"Finished_out\" out default 0\r\n  signal name \"Started_out\" out default 0"+
+  +"\r\n  double name \"Time_out\" out default \"?\"\r\n  char name \"Func_in\" in m"+
+  +"enu default \"\"\r\n  char name \"Func_out\" out menu default \"\"\r\n  signal n"+
+  +"ame \"_allinval_dchg\" default 1\r\n  double name \"L0\" in menu run default"+
+  +" \"0\"\r\n  double name \"V\" in menu run default \"\"\r\n  double name \"G\" in m"+
+  +"enu run default \"\"\r\n  matrix double name \"argmax_func\" out menu defaul"+
+  +"t \"[ ] ?\"\r\n  matrix double name \"AllMax_out\" out default \"[ ] ?\"\r\n  do"+
+  +"uble name \"Progress_out\" out default \"0\"\r\n  matrix double oneindex nam"+
+  +"e \"Y_res\" out menu default \"[ ] ?\"\r\n  double name \"Y_res_f\" out defaul"+
+  +"t \"?\"\r\n  matrix double oneindex name \"L_res\" out menu default \"[ ] ?\"\r"+
+  +"\n  double name \"L_res_f\" out default \"?\"\r\n  matrix double oneindex nam"+
+  +"e \"r_res\" out menu default \"[ ] ?\"\r\n  double name \"r_res_f\" out defaul"+
+  +"t \"?\"\r\n  matrix double oneindex name \"_max_res\" out menu default \"[ ] "+
+  +"?\"\r\n  double name \"_max_res_f\" out default \"?\"\r\n\r\n$AUTO\r\n  \"Enabled_in"+
+  +"\",\"_Enabled_chg\"\r\n  \"AllMax_out\",\"_results_ok\"\r\n  \"Complete_out\",\"_res"+
+  +"ults_ok\"\r\n  \"Error_out\",\"_results_ok\"\r\n    \"L0\",\"_allinval_dchg\"\r\n    "+
+  +"\"V\",\"_allinval_dchg\"\r\n    \"G\",\"_allinval_dchg\"\r\n  \"argmax_func\",\"_resu"+
+  +"lts_ok\"\r\n  \"Y_res\",\"_results_ok\"\r\n  \"Y_res_f\",\"_results_ok\"\r\n  \"L_res\""+
+  +",\"_results_ok\"\r\n  \"L_res_f\",\"_results_ok\"\r\n  \"r_res\",\"_results_ok\"\r\n  "+
+  +"\"r_res_f\",\"_results_ok\"\r\n  \"_max_res\",\"_results_ok\"\r\n  \"_max_res_f\",\"_"+
+  +"results_ok\"\r\n\r\n$PARAM\r\n  BOOL name \"deepsearch_setup\" default \"FALSE\"\r"+
+  +"\n  BOOL name \"noautostart_setup\" default \"FALSE\"\r\n  double name \"Chunk"+
+  +"SizeMb_setup\" default \"4\"\r\n  int name \"tactcount_setup\" default \"1000\""+
+  +"\r\n  double name \"EqualMaxDelta_setup\" default \"0.001\"\r\n  BOOL name \"Pr"+
+  +"ecToEndSteps_setup\" default \"TRUE\"\r\n  BOOL name \"PrecToDf_setup\" defau"+
+  +"lt \"TRUE\"\r\n  int name \"DfCycles_setup\" default \"5\"\r\n  double name \"DfD"+
+  +"elta_setup\" default \"0.00001\"\r\n  int name \"PrecGridSize_setup\" default"+
+  +" \"0\"\r\n  BOOL name \"NoPlateau_setup\" default \"FALSE\"\r\n  BOOL name \"TabA"+
+  +"fterCalc_setup\" default \"TRUE\"\r\n  BOOL name \"TabPrecCalc_setup\" defaul"+
+  +"t \"TRUE\"\r\n  BOOL name \"Tab_PrecToEndSteps_setup\" default \"TRUE\"\r\n  BOO"+
+  +"L name \"Tab_PrecToDf_setup\" default \"TRUE\"\r\n  int name \"Tab_DfCycles_s"+
+  +"etup\" default \"5\"\r\n  double name \"Tab_DfDelta_setup\" default \"0.00001\""+
+  +"\r\n  int name \"Tab_PrecGridSize_setup\" default \"0\"\r\n  double name \"DfFi"+
+  +"lter_setup\" default \"0.00001\"\r\n  int name \"TR_params\" default \"0\"\r\n  r"+
+  +"dsbcppString name \"TR_text\" default \"\" notranslate\r\n  int name \"StartC"+
+  +"ycles_setup\" default \"20\"\r\n$REGFUN\r\n  name \"IPU.L57.UserFuncTransfer.I"+
+  +"sFuncSource\" id \"L57_BlkFunc_IsFuncSource\"\r\n  name \"IPU.L57.UserFuncTr"+
+  +"ansfer.AcceptFunction\" id \"L57_BlkFunc_AcceptFunc\" param \"L57_AcceptFu"+
+  +"nc_Param*\"\r\n  name \"IPU.L57.UserFuncTransfer.AcceptParameter\" id \"L57_"+
+  +"BlkFunc_AcceptParam\" param \"L57_AcceptParam_Param*\"\r\n  name \"IPU.L57.U"+
+  +"serFuncTransfer.IsParameterTransferredWithFunc\" id \"L57_BlkFunc_CheckT"+
+  +"ransParam\" param \"L57_CheckParamConn_Param*\"\r\n  name \"IPU.L57.UserFunc"+
+  +"Transfer.CheckParamTransfer\" id \"L57_BlkFunc_CheckTransParam2\" param \""+
+  +"L57_CheckTranser_Param*\"\r\n$LINKS\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57"+
+  +"Mk2ArgMax.cpp\"\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2Basic.cpp\"\r\n  m"+
+  +"anual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2Basic.h\"\r\n  manual \"$RDSINCLUDE$\\R"+
+  +"dsL57Mk2\\L57Mk2Bits.cpp\"\r\n$CUSTOMERR\r\n|В одном из описаний функций обн"+
+  +"аружена ошибка: видимо, текст функции написан не в синтаксисе языка C."+
+  +" Пожалуйста, проверьте все описания в настройках блока или откройте ре"+
+  +"дактор модели и изучите ошибки, выданные компилятором.\r\n$STRINGS\r\n  id"+
+  +" \"L57_MSGCAPTION\" text \"Внутренний максимизатор\" lf bin \"$CURLANG$\\Dll"+
+  +"\\L57.bin\" \"SemiAutoArgMax\" \"ModelMessagesCaption\"\r\n$ENDDECL\r\n$GLOBAL\r\n"+
+  +"/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пользовате"+
+  +"лем,\r\nее текст генерируется автоматически\r\n   ATTENTION! This model is"+
+  +" generated automatically, do not edit it */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r"+
+  +"\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// Версия модели (в норме"+
+  +" должна соответствовать L57_LATESTMODELVERSION)\r\n#define L57_MODELVERS"+
+  +"ION 15\r\n\r\n// Число максимизируемых параметров\r\n#define L57_PARAMSCOUNT"+
+  +" 3\r\n\r\n// Файл и тема справки\r\n#define L57_HELPUIFILE \"Blocks\\\\L57.ui\"\r"+
+  +"\n#define L57_HELPTOPIC \"L57Mk2ArgMax\"\r\n\r\n// Заголовки функций для инди"+
+  +"кации\r\n#define L57_TITLES \"\"\r\n// Тела функций для индикации\r\n#define L"+
+  +"57_PROGRAMS \"if (L0*Y<=V) \\r\\n\\treturn V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)*V;"+
+  +"\\r\\nreturn 0;\"\r\n\r\n// Число простых выходных таблиц F(x)\r\n#define L57_O"+
+  +"NEARG_SIMPLE_CNT 0\r\n// Число простых выходных таблиц F(x,y)\r\n#define L"+
+  +"57_TWOARG_SIMPLE_CNT 0\r\n// Число выходных таблиц ArgMax(x)\r\n#define L5"+
+  +"7_ONEARG_ARGMAX_CNT 0\r\n// Число выходных таблиц ArgMax(x,y)\r\n#define L"+
+  +"57_TWOARG_ARGMAX_CNT 1\r\n\r\n// Определены конечные шаги\r\n#define L57_END"+
+  +"STEPSUSED\r\n\r\n#define L57MS_GLOBALS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.c"+
+  +"pp>\r\n#undef L57MS_GLOBALS\r\n\r\n\r\n// Служебный класс для вычисления значе"+
+  +"ния функции\r\n#define ERRORVALUE (L57_ERROR())\r\n#define L57_CALCCLASSNA"+
+  +"ME L57_Calc\r\n#define L57_CALCTYPE_VALUE\r\nclass L57_Calc\r\n{\r\n  public:\r"+
+  +"\n    inline double L57_ERROR(void){return rdsbcppHugeDouble;};\r\n    do"+
+  +"uble Y;\r\n    double L;\r\n    double r;\r\n    double L0;\r\n    double V;\r\n"+
+  +"    double G;\r\n    // Функция вычисления (генерируемая)\r\n    double _C"+
+  +"alc_gen(void);\r\n    // Функция вычисления double (с перехватом исключе"+
+  +"ний)\r\n    double _Calc_main(void)\r\n    { double __temp;\r\n      RDSBCPP"+
+  +"_TRY\r\n        { __temp=_Calc_gen(); }\r\n      RDSBCPP_CATCHALL\r\n       "+
+  +" { __temp=rdsbcppHugeDouble; }\r\n      return __temp;\r\n    };\r\n    // Ф"+
+  +"ункция вычисления исходного типа (с перехватом исключений)\r\n    double"+
+  +" _Calc_original(void)\r\n{ return _Calc_main(); };\r\n};\r\n// Функция вычис"+
+  +"ления (генерируемая)\r\ndouble L57_Calc::_Calc_gen(void)\r\n{\r\n  #define L"+
+  +"57_ORIGPARAM(x) (L57_CALCCLASSNAME::x)\r\n  #ifndef BCPP55_ERRORRETRYCOM"+
+  +"PILE\r\nif (L0*Y<=V) \r\n	return V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)*V;\r\nreturn 0"+
+  +";\r\n  #endif // ifndef BCPP55_ERRORRETRYCOMPILE\r\n; /* */\r\n  return rdsb"+
+  +"cppHugeDouble;\r\n  #undef L57_ORIGPARAM\r\n}\r\n#undef L57_CALCCLASSNAME\r\n#"+
+  +"undef ERRORVALUE\r\n//--------------------------------------------------"+
+  +"--------------------\r\n\r\n$MODEL\r\n/* ВНИМАНИЕ! Эта модель не предназначе"+
+  +"на для редактирования пользователем,\r\nее текст генерируется автоматиче"+
+  +"ски */\r\n\r\n#define L57MS_MODEL\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n"+
+  +"#undef L57MS_MODEL\r\n\r\n$SETUP\r\n/* ВНИМАНИЕ! Эта модель не предназначена"+
+  +" для редактирования пользователем,\r\nее текст генерируется автоматическ"+
+  +"и */\r\n\r\n#define L57MS_SETUP\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#u"+
+  +"ndef L57MS_SETUP\r\n\r\n$CLASSDEF\r\n/* ВНИМАНИЕ! Эта модель не предназначен"+
+  +"а для редактирования пользователем,\r\nее текст генерируется автоматичес"+
+  +"ки */\r\n\r\n#define L57MS_CLASS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#"+
+  +"undef L57MS_CLASS\r\n\r\n  // Фиксированные значения границ и шагов\r\n    d"+
+  +"ouble Y_0;\r\n    double Y_min;\r\n    double Y_max;\r\n    double Y_step;\r\n"+
+  +"    double Y_end;\r\n    double L_0;\r\n    double L_min;\r\n    double L_ma"+
+  +"x;\r\n    double L_step;\r\n    double L_end;\r\n    double r_0;\r\n    double"+
+  +" r_min;\r\n    double r_max;\r\n    double r_step;\r\n    double r_end;\r\n  /"+
+  +"/ Инициализация фиксированных значений\r\n  void L57_Init_Fixed_Data(voi"+
+  +"d);\r\n\r\n  // Объекты для передачи входов-параметров функции\r\n  L57_Func"+
+  +"Transfer _Transfer;\r\n  L57_FuncTransferParameter *L0_trans;\r\n  L57_Fun"+
+  +"cTransferParameter *V_trans;\r\n  L57_FuncTransferParameter *G_trans;\r\n "+
+  +" // Сброс\r\n  void L57_Reset_Trans_Data(void)\r\n  {\r\n    L0_trans=NULL;\r"+
+  +"\n    V_trans=NULL;\r\n    G_trans=NULL;\r\n  };\r\n  // Создание всех параме"+
+  +"тров передачи\r\n  void L57_Create_Trans_Data(void);\r\n\r\n  // Хранилища д"+
+  +"ля проверки изменения переменных\r\n  double L0_old;\r\n  double V_old;\r\n "+
+  +" double G_old;\r\n  // Инициализация хранилищ значений\r\n  void L57_Init_"+
+  +"Old_Data(void)\r\n  {\r\n    L0_old=rdsbcppHugeDouble;\r\n    V_old=rdsbcppH"+
+  +"ugeDouble;\r\n    G_old=rdsbcppHugeDouble;\r\n  };\r\n\r\n  // Выходные таблиц"+
+  +"ы argmax(x,y)\r\n  L57_Table2ArgFuncData _TwoargArgMaxF[L57_TWOARG_ARGMA"+
+  +"X_CNT];\r\n\r\n\r\n$CLASSEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для р"+
+  +"едактирования пользователем,\r\nее текст генерируется автоматически */\r\n"+
+  +"\r\n#define L57MS_AFTERCLASS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#un"+
+  +"def L57MS_AFTERCLASS\r\n\r\n// Экспорт текста функции для взаимодействия с"+
+  +" другими блоками по связям\r\nchar *rdsbcppBlockClass::_FuncExportText=\""+
+  +"V G V \\n\"\r\n\"V L V 0\\n\"\r\n\"V L0 V 0\\n\"\r\n\"V r V 0\\n\"\r\n\"V V V \\n\"\r\n\"V Y V "+
+  +"0\\n\"\r\n\"F\\n\"\r\n\"T\\n\"\r\n\"X\\n\"\r\n\"|if (L0*Y<=V) \\n\"\r\n\"|\\treturn V+(L-L0)*Y-Y"+
+  +"*Y/(2.0*r)-(1+G)*V;\\n\"\r\n\"|return 0;\\n\"\r\n\"}\\n\"\r\n\"#ORDER#\\n\"\r\n\"Y\\n\"\r\n\"L\\"+
+  +"n\"\r\n\"r\\n\"\r\n\"L0\\n\"\r\n\"V\\n\"\r\n\"G\";\r\n\r\n// Инициализация фиксированных значе"+
+  +"ний\r\nvoid rdsbcppBlockClass::L57_Init_Fixed_Data(void)\r\n{\r\n    Y_0=0;\r"+
+  +"\n    Y_min=0;\r\n    Y_max=50;\r\n    Y_step=0.1;\r\n    Y_end=0.01;\r\n    L_"+
+  +"0=0;\r\n    L_min=0;\r\n    L_max=15;\r\n    L_step=0.1;\r\n    L_end=0.01;\r\n "+
+  +"   r_0=0;\r\n    r_min=0.1;\r\n    r_max=5;\r\n    r_step=0.1;\r\n    r_end=0."+
+  +"01;\r\n\r\n}\r\n//----------------------------------------------------------"+
+  +"-------------\r\n\r\n// Создание всех параметров передачи\r\nvoid rdsbcppBlo"+
+  +"ckClass::L57_Create_Trans_Data(void)\r\n{\r\n  // Стационарных входов: 3\r\n"+
+  +"  // Максимизируемых параметров: 3\r\n  _Transfer.ClearParameters();\r\n  "+
+  +"_Transfer.EnlargeParameters(3+3*5);\r\n\r\n  L0_trans=_Transfer.AddParamet"+
+  +"erRds(\"L0\",L57_VARSUFFIX_NONE,FALSE,L0.Num(),&L0);\r\n  V_trans=_Transfe"+
+  +"r.AddParameterRds(\"V\",L57_VARSUFFIX_NONE,FALSE,V.Num(),&V);\r\n  G_trans"+
+  +"=_Transfer.AddParameterRds(\"G\",L57_VARSUFFIX_NONE,FALSE,G.Num(),&G);\r\n"+
+  +"\r\n  _Transfer.AddParameter(\"Y\",L57_VARSUFFIX_0,FALSE,-1,&Y_0);\r\n  _Tra"+
+  +"nsfer.AddParameter(\"Y\",L57_VARSUFFIX_MIN,FALSE,-1,&Y_min);\r\n  _Transfe"+
+  +"r.AddParameter(\"Y\",L57_VARSUFFIX_MAX,FALSE,-1,&Y_max);\r\n  _Transfer.Ad"+
+  +"dParameter(\"Y\",L57_VARSUFFIX_STEP,FALSE,-1,&Y_step);\r\n  _Transfer.AddP"+
+  +"arameter(\"Y\",L57_VARSUFFIX_END,FALSE,-1,&Y_end);\r\n\r\n  _Transfer.AddPar"+
+  +"ameter(\"L\",L57_VARSUFFIX_0,FALSE,-1,&L_0);\r\n  _Transfer.AddParameter(\""+
+  +"L\",L57_VARSUFFIX_MIN,FALSE,-1,&L_min);\r\n  _Transfer.AddParameter(\"L\",L"+
+  +"57_VARSUFFIX_MAX,FALSE,-1,&L_max);\r\n  _Transfer.AddParameter(\"L\",L57_V"+
+  +"ARSUFFIX_STEP,FALSE,-1,&L_step);\r\n  _Transfer.AddParameter(\"L\",L57_VAR"+
+  +"SUFFIX_END,FALSE,-1,&L_end);\r\n\r\n  _Transfer.AddParameter(\"r\",L57_VARSU"+
+  +"FFIX_0,FALSE,-1,&r_0);\r\n  _Transfer.AddParameter(\"r\",L57_VARSUFFIX_MIN"+
+  +",FALSE,-1,&r_min);\r\n  _Transfer.AddParameter(\"r\",L57_VARSUFFIX_MAX,FAL"+
+  +"SE,-1,&r_max);\r\n  _Transfer.AddParameter(\"r\",L57_VARSUFFIX_STEP,FALSE,"+
+  +"-1,&r_step);\r\n  _Transfer.AddParameter(\"r\",L57_VARSUFFIX_END,FALSE,-1,"+
+  +"&r_end);\r\n\r\n}\r\n//-----------------------------------------------------"+
+  +"------------------\r\n\r\n// Проверка изменения переменных\r\n// *pChgSignal"+
+  +"On взводится при наличии сигнала изменения (независимо от фактического"+
+  +" изменения)\r\nBOOL rdsbcppBlockClass::L57InputsChange(BOOL _force,BOOL "+
+  +"*pChgSignalOn)\r\n{ BOOL _changes=FALSE;\r\n\r\n  // Стационарных вещественн"+
+  +"ых входов: 3\r\n  // Служебных вещественных входов: 0\r\n  // Итого вещест"+
+  +"венных: 3\r\n\r\n  // Вещественные входы\r\n  if(_allinval_dchg!=0 || _force"+
+  +")\r\n    { _allinval_dchg=0;\r\n      _changes=_force;\r\n      if(pChgSigna"+
+  +"lOn) *pChgSignalOn=TRUE;\r\n\r\n      if(L0_old!=L0)\r\n        { _changes=T"+
+  +"RUE;\r\n          _Transfer.TransferParameter(rdsbcppBlockData->Block,L0"+
+  +"_trans,_Transfer.DestBlocks,TRUE);\r\n        }\r\n      if(V_old!=V)\r\n   "+
+  +"     { _changes=TRUE;\r\n          _Transfer.TransferParameter(rdsbcppBl"+
+  +"ockData->Block,V_trans,_Transfer.DestBlocks,TRUE);\r\n        }\r\n      i"+
+  +"f(G_old!=G)\r\n        { _changes=TRUE;\r\n          _Transfer.TransferPar"+
+  +"ameter(rdsbcppBlockData->Block,G_trans,_Transfer.DestBlocks,TRUE);\r\n  "+
+  +"      }\r\n\r\n\r\n      if(_changes)\r\n        { // Запоминание изменившихся"+
+  +"\r\n          L0_old=L0;\r\n          V_old=V;\r\n          G_old=G;\r\n      "+
+  +"  }\r\n    }\r\n\r\n  // Матричные входы (матрицы, массивы, функции)\r\n\r\n  re"+
+  +"turn _changes;\r\n}\r\n//-------------------------------------------------"+
+  +"----------------------\r\n\r\n// Занесение стационарных переменных в вычис"+
+  +"литель функции\r\nvoid rdsbcppBlockClass::L57InputsToCalc(void)\r\n{\r\n  _C"+
+  +"alculator.L0=L0;\r\n  _Calculator.V=V;\r\n  _Calculator.G=G;\r\n}\r\n//-------"+
+  +"----------------------------------------------------------------\r\n\r\n//"+
+  +" Инициализация набора максимизируемых параметров\r\nvoid rdsbcppBlockCla"+
+  +"ss::L57InitParams(void)\r\n{\r\n  _Params.P[0].FuncVal=Y_0; // 0\r\n  _Param"+
+  +"s.P[0].Min=Y_min; // 0\r\n  _Params.P[0].Max=Y_max; // 50\r\n  _Params.P[0"+
+  +"].StartStep=Y_step; // 0.1\r\n  _Params.P[0].EndStep=Y_end; // 0.01\r\n\r\n "+
+  +" _Params.P[1].FuncVal=L_0; // 0\r\n  _Params.P[1].Min=L_min; // 0\r\n  _Pa"+
+  +"rams.P[1].Max=L_max; // 15\r\n  _Params.P[1].StartStep=L_step; // 0.1\r\n "+
+  +" _Params.P[1].EndStep=L_end; // 0.01\r\n\r\n  _Params.P[2].FuncVal=r_0; //"+
+  +" 0\r\n  _Params.P[2].Min=r_min; // 0.1\r\n  _Params.P[2].Max=r_max; // 5\r\n"+
+  +"  _Params.P[2].StartStep=r_step; // 0.1\r\n  _Params.P[2].EndStep=r_end;"+
+  +" // 0.01\r\n\r\n}\r\n//-----------------------------------------------------"+
+  +"------------------\r\n\r\n// Занесение текущих значений параметров в вычис"+
+  +"литель функции\r\nvoid rdsbcppBlockClass::L57ParamsToCalc(void)\r\n{\r\n  _C"+
+  +"alculator.Y=_Params.P[0].Current;\r\n  _Calculator.L=_Params.P[1].Curren"+
+  +"t;\r\n  _Calculator.r=_Params.P[2].Current;\r\n}\r\n//----------------------"+
+  +"-------------------------------------------------\r\n\r\n// Установить гот"+
+  +"овность всех простых табличных функций\r\nvoid rdsbcppBlockClass::_SetAl"+
+  +"lSimpleTableFuncReady(char flag)\r\n{\r\n}\r\n//----------------------------"+
+  +"-------------------------------------------\r\n\r\n// Очистить выходные ма"+
+  +"трицы всех табличных функций\r\nvoid rdsbcppBlockClass::_ClearAllTableFu"+
+  +"nc(void)\r\n{\r\n  argmax_func.Resize(0,0);\r\n}\r\n//------------------------"+
+  +"-----------------------------------------------\r\n\r\n\r\n\r\n\r\n// Заполнение"+
+  +" массива генерации выходных таблиц argmax(x,y)\r\nBOOL rdsbcppBlockClass"+
+  +"::_TwoargArgMaxF_fill(void)\r\n{ L57_Table2ArgFuncData *f;\r\n  L57_Parame"+
+  +"ter *p1,*p2;\r\n\r\n  f=_TwoargArgMaxF+0;\r\n  p1=_Params.P+1; // L\r\n  p2=_P"+
+  +"arams.P+2; // r\r\n    f->Args1Array=&(p1->Array);\r\n    f->Arg1Index=1; "+
+  +"// L\r\n    f->Args2Array=&(p2->Array);\r\n    f->Arg2Index=2; // r\r\n    f"+
+  +"->NResults=3+1; // Значения всех аргументов и самой функции\r\n    if(!f"+
+  +"->AllocateResultArrays()) return FALSE;\r\n      // Выходная матрица arg"+
+  +"max_func\r\n      f->Output.Add2Arg(&argmax_func,NULL,3,0); // L57_ERROR"+
+  +"()\r\n\r\n  return TRUE;\r\n}\r\n//-------------------------------------------"+
+  +"----------------------------\r\n\r\n// Переписать максимумы из AllMax_out "+
+  +"в отдельные массивы (генерируется)\r\nBOOL rdsbcppBlockClass::L57AllMaxT"+
+  +"oArrays(void)\r\n{\r\n#ifdef L57_PARAMSCOUNT\r\n  int n_max=AllMax_out.Rows("+
+  +");\r\n  // Аргументы\r\n  if(!Y_res.Resize(n_max))\r\n    return FALSE;\r\n  f"+
+  +"or(int i=0;i<n_max;i++)\r\n    Y_res[i]=AllMax_out[i][0];\r\n  if(!L_res.R"+
+  +"esize(n_max))\r\n    return FALSE;\r\n  for(int i=0;i<n_max;i++)\r\n    L_re"+
+  +"s[i]=AllMax_out[i][1];\r\n  if(!r_res.Resize(n_max))\r\n    return FALSE;\r"+
+  +"\n  for(int i=0;i<n_max;i++)\r\n    r_res[i]=AllMax_out[i][2];\r\n\r\n  // Зн"+
+  +"ачения\r\n  if(!_max_res.Resize(n_max))\r\n    return FALSE;\r\n  for(int i="+
+  +"0;i<n_max;i++)\r\n    _max_res[i]=AllMax_out[i][L57_PARAMSCOUNT];\r\n\r\n  /"+
+  +"/ Фильтрованные данные\r\n  if(n_max)\r\n    { BOOL _fchg=FALSE;\r\n      do"+
+  +"uble _v,_vn;\r\n      if(!_fchg)\r\n        { _v=Y_res_f;\r\n          _vn=Y"+
+  +"_res[0];\r\n          if(_v==rdsbcppHugeDouble || (_vn!=rdsbcppHugeDoubl"+
+  +"e && fabs(_v-_vn)>_Params.P[0].EndStep*1.1) )\r\n            _fchg=TRUE;"+
+  +"\r\n        }\r\n      if(!_fchg)\r\n        { _v=L_res_f;\r\n          _vn=L_"+
+  +"res[0];\r\n          if(_v==rdsbcppHugeDouble || (_vn!=rdsbcppHugeDouble"+
+  +" && fabs(_v-_vn)>_Params.P[1].EndStep*1.1) )\r\n            _fchg=TRUE;\r"+
+  +"\n        }\r\n      if(!_fchg)\r\n        { _v=r_res_f;\r\n          _vn=r_r"+
+  +"es[0];\r\n          if(_v==rdsbcppHugeDouble || (_vn!=rdsbcppHugeDouble "+
+  +"&& fabs(_v-_vn)>_Params.P[2].EndStep*1.1) )\r\n            _fchg=TRUE;\r\n"+
+  +"        }\r\n      if((!_fchg) && DfFilter_setup!=rdsbcppHugeDouble)\r\n  "+
+  +"      { _v=_max_res_f;\r\n          _vn=_max_res[0];\r\n          if(_v==r"+
+  +"dsbcppHugeDouble || (_vn!=rdsbcppHugeDouble && fabs(_v-_vn)>DfFilter_s"+
+  +"etup) )\r\n            _fchg=TRUE;\r\n        }\r\n\r\n      if(_fchg)\r\n      "+
+  +"  {\r\n          Y_res_f=Y_res[0];\r\n          L_res_f=L_res[0];\r\n       "+
+  +"   r_res_f=r_res[0];\r\n          _max_res_f=_max_res[0];\r\n        }\r\n  "+
+  +"  }\r\n#endif // ifdef L57_PARAMSCOUNT\r\n\r\n  return TRUE;\r\n}\r\n//---------"+
+  +"--------------------------------------------------------------\r\n\r\n\r\n$I"+
+  +"NIT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования польз"+
+  +"ователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_INI"+
+  +"T\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_INIT\r\n\r\n$START\r"+
+  +"\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пользоват"+
+  +"елем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_START\r\n"+
+  +"#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_START\r\n\r\n$CALCMODE"+
+  +"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пользова"+
+  +"телем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_CALCMO"+
+  +"DE\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_CALCMODE\r\n\r\n$L"+
+  +"OADTEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования п"+
+  +"ользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS"+
+  +"_LOADPARAMS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_LOADP"+
+  +"ARAMS\r\n$SAVETEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редакти"+
+  +"рования пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#def"+
+  +"ine L57MS_SAVEPARAMS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L5"+
+  +"7MS_SAVEPARAMS\r\n\r\n$OTHER\r\n/* ВНИМАНИЕ! Эта модель не предназначена для"+
+  +" редактирования пользователем,\r\nее текст генерируется автоматически */"+
+  +"\r\n\r\n#define L57MS_OTHER\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef"+
+  +" L57MS_OTHER\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.IsFuncSource\"\r\n/* ВНИМ"+
+  +"АНИЕ! Эта модель не предназначена для редактирования пользователем,\r\nе"+
+  +"е текст генерируется автоматически */\r\n\r\nResult=1;\r\n\r\n$FUNC \"IPU.L57.U"+
+  +"serFuncTransfer.AcceptFunction\"\r\n/* ВНИМАНИЕ! Эта модель не предназнач"+
+  +"ена для редактирования пользователем,\r\nее текст генерируется автоматич"+
+  +"ески */\r\n\r\n#define L57MS_ACCEPTFUNC\r\n#include <RdsL57Mk2/L57Mk2ArgMax."+
+  +"cpp>\r\n#undef L57MS_ACCEPTFUNC\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.Accep"+
+  +"tParameter\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирован"+
+  +"ия пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L"+
+  +"57MS_ACCEPTPARAM\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_"+
+  +"ACCEPTPARAM\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.IsParameterTransferredW"+
+  +"ithFunc\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования "+
+  +"пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57M"+
+  +"S_CHECKTRANSFUNC\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_"+
+  +"CHECKTRANSFUNC\r\n\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.CheckParamTransfer"+
+  +"\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пользов"+
+  +"ателем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57MS_CHECK"+
+  +"TRANSFUNC2\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_CHECKT"+
+  +"RANSFUNC2\r\n\r\n\r\n$RESET\r\n/* ВНИМАНИЕ! Эта модель не предназначена для ре"+
+  +"дактирования пользователем,\r\nее текст генерируется автоматически */\r\n\r"+
+  +"\n#define L57MS_RESET\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L5"+
+  +"7MS_RESET\r\n\r\n\r\n$VARCHECK\r\n/* ВНИМАНИЕ! Эта модель не предназначена для"+
+  +" редактирования пользователем,\r\nее текст генерируется автоматически */"+
+  +"\r\n\r\n#define L57MS_VARCHECK\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#un"+
+  +"def L57MS_VARCHECK\r\n\r\n$DRAWADD\r\n/* ВНИМАНИЕ! Эта модель не предназначе"+
+  +"на для редактирования пользователем,\r\nее текст генерируется автоматиче"+
+  +"ски */\r\n\r\n#define L57MS_DRAWADDITIONAL\r\n#include <RdsL57Mk2/L57Mk2ArgM"+
+  +"ax.cpp>\r\n#undef L57MS_DRAWADDITIONAL\r\n\r\n$HINT\r\n/* ВНИМАНИЕ! Эта модель"+
+  +" не предназначена для редактирования пользователем,\r\nее текст генериру"+
+  +"ется автоматически */\r\n\r\n#define L57MS_HINT\r\n#include <RdsL57Mk2/L57Mk"+
+  +"2ArgMax.cpp>\r\n#undef L57MS_HINT\r\n\r\n$POPUP\r\n/* ВНИМАНИЕ! Эта модель не "+
+  +"предназначена для редактирования пользователем,\r\nее текст генерируется"+
+  +" автоматически */\r\n\r\n#define L57MS_POPUP\r\n#include <RdsL57Mk2/L57Mk2Ar"+
+  +"gMax.cpp>\r\n#undef L57MS_POPUP\r\n\r\n\r\n$HIDDEN\r\n{N\r\n W64,64,64,64,64\r\n {V\r"+
+  +"\n  NY\r\n  TV\r\n  V=0\r\n  [=0\r\n  ]=50\r\n  D=0.1\r\n  E=0.01\r\n }\r\n {V\r\n  NL\r\n "+
+  +" TV\r\n  V=0\r\n  [=0\r\n  ]=15\r\n  D=0.1\r\n  E=0.01\r\n }\r\n {V\r\n  Nr\r\n  TV\r\n  V"+
+  +"=0\r\n  [=0.1\r\n  ]=5\r\n  D=0.1\r\n  E=0.01\r\n }\r\n}\r\n{I\r\n W64,64,64\r\n {V\r\n  N"+
+  +"L0\r\n  TV\r\n  V=0\r\n }\r\n {V\r\n  NV\r\n  TV\r\n  V=\r\n }\r\n {V\r\n  NG\r\n  TV\r\n  V=\r"+
+  +"\n }\r\n}\r\n{F\r\n {F0\r\n  T\r\n  V\r\n  I0\r\n  C\r\n  |if (L0*Y<=V) \r\n  |	return V+"+
+  +"(L-L0)*Y-Y*Y/(2.0*r)-(1+G)*V;\r\n  |return 0;\r\n }\r\n}\r\n{T\r\n W81,93,78,76\r"+
+  +"\n {F\r\n  Nargmax\r\n  Tmax\r\n  AL,r\r\n  R%0\r\n }\r\n}\r\n{O\r\n :EndStep=1\r\n}\r\n$OP"+
+  +"TIONS\r\n  tabs $GLOBAL\r\n  window pos 18 164 size 1214 837 hdiv 337 vdiv"+
+  +" 356 fdiv 334 hidevar\r\n  svc 0 90 1 73 2 90 3 90\r\n  dvc 0 90 1 90 2 90"+
+  +"\r\n  fnc 0 90 1 90 2 90\r\n  pvc 0 90 1 90 2 100\r\n  dvcheck 1\r\n  indexche"+
+  +"ck 0\r\n  ignorewarnings 1\r\n  errorretrycompile 1\r\n  customerrmsg 1 show"+
+  +"block\r\n  customerrtransl \"$CURLANG$\\Dll\\L57.bin\" \"L57mdl\" \"CustomErrSi"+
+  +"ngleFunc\"\r\n  autoreadonlyeditor 1\r\n  genvartypemacros 0\r\n  matherr 1\r\n"+
+  +"  catchall 0\r\n  dvstart 1\r\n  searchlinks off\r\n  undefvars 1\r\n\r\n" 
+  object name "L57_ArgMax2.mdl" type "ICS.l49.Common.dll.bcpp55.model.scheme.$BC55MODEL" id 0 string "$BC55MODEL\r\n#substlang \"English\"\r\n|Автоматически генерируемая модель п"+
+  +"олуавтокомпилируемого внутреннего максимизатора\r\n>English\r\n|Automatica"+
+  +"lly generated model of user-defined function maximizer\r\n$NOSHARE\r\n$VAR"+
+  +"S\r\n  signal name \"_Start\" in run default 1\r\n  signal name \"_Ready\" out"+
+  +" default 0\r\n  short name \"Aux_in\" in hide default 0\r\n  short name \"Aux"+
+  +"_out\" out hide default 0\r\n  signal name \"Start_cmd\" in menu run defaul"+
+  +"t 0\r\n  signal name \"Restart_cmd\" in menu run default 0\r\n  matrix logic"+
+  +"al oneindex name \"Enabled_in\" in run default \"[ ] 0\"\r\n  signal name \"_"+
+  +"Enabled_chg\" default 1\r\n  int name \"_Stage\" out default 0\r\n  int name "+
+  +"\"_SubStage\" out default 0\r\n  logical name \"_results_ok\" default 0\r\n  l"+
+  +"ogical name \"_enabled_res\" default 1\r\n  logical name \"Complete_out\" ou"+
+  +"t default 0\r\n  logical name \"Error_out\" out default 0\r\n  signal name \""+
+  +"Finished_out\" out default 0\r\n  signal name \"Started_out\" out default 0"+
+  +"\r\n  double name \"Time_out\" out default \"?\"\r\n  char name \"Func_in\" in m"+
+  +"enu default \"\"\r\n  char name \"Func_out\" out menu default \"\"\r\n  signal n"+
+  +"ame \"_allinval_dchg\" default 1\r\n  double name \"L\" in menu run default "+
+  +"\"0\"\r\n  double name \"L0\" in menu run default \"0\"\r\n  double name \"r\" in "+
+  +"menu run default \"0\"\r\n  double name \"G\" in menu run default \"\"\r\n  matr"+
+  +"ix double name \"argmax_func\" out menu default \"[ ] ?\"\r\n  matrix double"+
+  +" name \"AllMax_out\" out default \"[ ] ?\"\r\n  double name \"Progress_out\" o"+
+  +"ut default \"0\"\r\n  matrix double oneindex name \"Y_res\" out menu default"+
+  +" \"[ ] ?\"\r\n  double name \"Y_res_f\" out default \"?\"\r\n  matrix double one"+
+  +"index name \"V_res\" out menu default \"[ ] ?\"\r\n  double name \"V_res_f\" o"+
+  +"ut default \"?\"\r\n  matrix double oneindex name \"_max_res\" out menu defa"+
+  +"ult \"[ ] ?\"\r\n  double name \"_max_res_f\" out default \"?\"\r\n\r\n$AUTO\r\n  \"E"+
+  +"nabled_in\",\"_Enabled_chg\"\r\n  \"AllMax_out\",\"_results_ok\"\r\n  \"Complete_o"+
+  +"ut\",\"_results_ok\"\r\n  \"Error_out\",\"_results_ok\"\r\n    \"L\",\"_allinval_dch"+
+  +"g\"\r\n    \"L0\",\"_allinval_dchg\"\r\n    \"r\",\"_allinval_dchg\"\r\n    \"G\",\"_all"+
+  +"inval_dchg\"\r\n  \"argmax_func\",\"_results_ok\"\r\n  \"Y_res\",\"_results_ok\"\r\n "+
+  +" \"Y_res_f\",\"_results_ok\"\r\n  \"V_res\",\"_results_ok\"\r\n  \"V_res_f\",\"_resul"+
+  +"ts_ok\"\r\n  \"_max_res\",\"_results_ok\"\r\n  \"_max_res_f\",\"_results_ok\"\r\n\r\n$P"+
+  +"ARAM\r\n  BOOL name \"deepsearch_setup\" default \"FALSE\"\r\n  BOOL name \"noa"+
+  +"utostart_setup\" default \"FALSE\"\r\n  double name \"ChunkSizeMb_setup\" def"+
+  +"ault \"4\"\r\n  int name \"tactcount_setup\" default \"1000\"\r\n  double name \""+
+  +"EqualMaxDelta_setup\" default \"0.001\"\r\n  BOOL name \"PrecToEndSteps_setu"+
+  +"p\" default \"TRUE\"\r\n  BOOL name \"PrecToDf_setup\" default \"TRUE\"\r\n  int "+
+  +"name \"DfCycles_setup\" default \"5\"\r\n  double name \"DfDelta_setup\" defau"+
+  +"lt \"0.00001\"\r\n  int name \"PrecGridSize_setup\" default \"0\"\r\n  BOOL name"+
+  +" \"NoPlateau_setup\" default \"FALSE\"\r\n  BOOL name \"TabAfterCalc_setup\" d"+
+  +"efault \"TRUE\"\r\n  BOOL name \"TabPrecCalc_setup\" default \"TRUE\"\r\n  BOOL "+
+  +"name \"Tab_PrecToEndSteps_setup\" default \"TRUE\"\r\n  BOOL name \"Tab_PrecT"+
+  +"oDf_setup\" default \"TRUE\"\r\n  int name \"Tab_DfCycles_setup\" default \"5\""+
+  +"\r\n  double name \"Tab_DfDelta_setup\" default \"0.00001\"\r\n  int name \"Tab"+
+  +"_PrecGridSize_setup\" default \"0\"\r\n  double name \"DfFilter_setup\" defau"+
+  +"lt \"0.00001\"\r\n  int name \"TR_params\" default \"0\"\r\n  rdsbcppString name"+
+  +" \"TR_text\" default \"\" notranslate\r\n  int name \"StartCycles_setup\" defa"+
+  +"ult \"20\"\r\n$REGFUN\r\n  name \"IPU.L57.UserFuncTransfer.IsFuncSource\" id \""+
+  +"L57_BlkFunc_IsFuncSource\"\r\n  name \"IPU.L57.UserFuncTransfer.AcceptFunc"+
+  +"tion\" id \"L57_BlkFunc_AcceptFunc\" param \"L57_AcceptFunc_Param*\"\r\n  nam"+
+  +"e \"IPU.L57.UserFuncTransfer.AcceptParameter\" id \"L57_BlkFunc_AcceptPar"+
+  +"am\" param \"L57_AcceptParam_Param*\"\r\n  name \"IPU.L57.UserFuncTransfer.I"+
+  +"sParameterTransferredWithFunc\" id \"L57_BlkFunc_CheckTransParam\" param "+
+  +"\"L57_CheckParamConn_Param*\"\r\n  name \"IPU.L57.UserFuncTransfer.CheckPar"+
+  +"amTransfer\" id \"L57_BlkFunc_CheckTransParam2\" param \"L57_CheckTranser_"+
+  +"Param*\"\r\n$LINKS\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2ArgMax.cpp\"\r\n "+
+  +" manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2Basic.cpp\"\r\n  manual \"$RDSINCLUD"+
+  +"E$\\RdsL57Mk2\\L57Mk2Basic.h\"\r\n  manual \"$RDSINCLUDE$\\RdsL57Mk2\\L57Mk2Bi"+
+  +"ts.cpp\"\r\n$CUSTOMERR\r\n|В одном из описаний функций обнаружена ошибка: в"+
+  +"идимо, текст функции написан не в синтаксисе языка C. Пожалуйста, пров"+
+  +"ерьте все описания в настройках блока или откройте редактор модели и и"+
+  +"зучите ошибки, выданные компилятором.\r\n$STRINGS\r\n  id \"L57_MSGCAPTION\""+
+  +" text \"Внутренний максимизатор\" lf bin \"$CURLANG$\\Dll\\L57.bin\" \"SemiAu"+
+  +"toArgMax\" \"ModelMessagesCaption\"\r\n$ENDDECL\r\n$GLOBAL\r\n/* ВНИМАНИЕ! Эта "+
+  +"модель не предназначена для редактирования пользователем,\r\nее текст ге"+
+  +"нерируется автоматически\r\n   ATTENTION! This model is generated automa"+
+  +"tically, do not edit it */\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"+
+  +"\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// Версия модели (в норме должна соответст"+
+  +"вовать L57_LATESTMODELVERSION)\r\n#define L57_MODELVERSION 15\r\n\r\n// Числ"+
+  +"о максимизируемых параметров\r\n#define L57_PARAMSCOUNT 2\r\n\r\n// Файл и т"+
+  +"ема справки\r\n#define L57_HELPUIFILE \"Blocks\\\\L57.ui\"\r\n#define L57_HELP"+
+  +"TOPIC \"L57Mk2ArgMax\"\r\n\r\n// Заголовки функций для индикации\r\n#define L5"+
+  +"7_TITLES \"\"\r\n// Тела функций для индикации\r\n#define L57_PROGRAMS \"if ("+
+  +"L0*Y<=V) \\r\\n\\treturn V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)*V;\\r\\nreturn 0;\"\r\n\r"+
+  +"\n// Число простых выходных таблиц F(x)\r\n#define L57_ONEARG_SIMPLE_CNT "+
+  +"0\r\n// Число простых выходных таблиц F(x,y)\r\n#define L57_TWOARG_SIMPLE_"+
+  +"CNT 0\r\n// Число выходных таблиц ArgMax(x)\r\n#define L57_ONEARG_ARGMAX_C"+
+  +"NT 1\r\n// Число выходных таблиц ArgMax(x,y)\r\n#define L57_TWOARG_ARGMAX_"+
+  +"CNT 0\r\n\r\n// Определены конечные шаги\r\n#define L57_ENDSTEPSUSED\r\n\r\n#def"+
+  +"ine L57MS_GLOBALS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS"+
+  +"_GLOBALS\r\n\r\n\r\n// Служебный класс для вычисления значения функции\r\n#def"+
+  +"ine ERRORVALUE (L57_ERROR())\r\n#define L57_CALCCLASSNAME L57_Calc\r\n#def"+
+  +"ine L57_CALCTYPE_VALUE\r\nclass L57_Calc\r\n{\r\n  public:\r\n    inline doubl"+
+  +"e L57_ERROR(void){return rdsbcppHugeDouble;};\r\n    double Y;\r\n    doub"+
+  +"le V;\r\n    double L;\r\n    double L0;\r\n    double r;\r\n    double G;\r\n  "+
+  +"  // Функция вычисления (генерируемая)\r\n    double _Calc_gen(void);\r\n "+
+  +"   // Функция вычисления double (с перехватом исключений)\r\n    double "+
+  +"_Calc_main(void)\r\n    { double __temp;\r\n      RDSBCPP_TRY\r\n        { _"+
+  +"_temp=_Calc_gen(); }\r\n      RDSBCPP_CATCHALL\r\n        { __temp=rdsbcpp"+
+  +"HugeDouble; }\r\n      return __temp;\r\n    };\r\n    // Функция вычисления"+
+  +" исходного типа (с перехватом исключений)\r\n    double _Calc_original(v"+
+  +"oid)\r\n{ return _Calc_main(); };\r\n};\r\n// Функция вычисления (генерируем"+
+  +"ая)\r\ndouble L57_Calc::_Calc_gen(void)\r\n{\r\n  #define L57_ORIGPARAM(x) ("+
+  +"L57_CALCCLASSNAME::x)\r\n  #ifndef BCPP55_ERRORRETRYCOMPILE\r\nif (L0*Y<=V"+
+  +") \r\n	return V+(L-L0)*Y-Y*Y/(2.0*r)-(1+G)*V;\r\nreturn 0;\r\n  #endif // if"+
+  +"ndef BCPP55_ERRORRETRYCOMPILE\r\n; /* */\r\n  return rdsbcppHugeDouble;\r\n "+
+  +" #undef L57_ORIGPARAM\r\n}\r\n#undef L57_CALCCLASSNAME\r\n#undef ERRORVALUE\r"+
+  +"\n//-------------------------------------------------------------------"+
+  +"---\r\n\r\n$MODEL\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактиров"+
+  +"ания пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define"+
+  +" L57MS_MODEL\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_MODE"+
+  +"L\r\n\r\n$SETUP\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирован"+
+  +"ия пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L"+
+  +"57MS_SETUP\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_SETUP\r"+
+  +"\n\r\n$CLASSDEF\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирова"+
+  +"ния пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define "+
+  +"L57MS_CLASS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_CLASS"+
+  +"\r\n\r\n  // Фиксированные значения границ и шагов\r\n    double Y_0;\r\n    d"+
+  +"ouble Y_min;\r\n    double Y_max;\r\n    double Y_step;\r\n    double Y_end;"+
+  +"\r\n    double V_0;\r\n    double V_min;\r\n    double V_max;\r\n    double V_"+
+  +"step;\r\n    double V_end;\r\n  // Инициализация фиксированных значений\r\n "+
+  +" void L57_Init_Fixed_Data(void);\r\n\r\n  // Объекты для передачи входов-п"+
+  +"араметров функции\r\n  L57_FuncTransfer _Transfer;\r\n  L57_FuncTransferPa"+
+  +"rameter *L_trans;\r\n  L57_FuncTransferParameter *L0_trans;\r\n  L57_FuncT"+
+  +"ransferParameter *r_trans;\r\n  L57_FuncTransferParameter *G_trans;\r\n  /"+
+  +"/ Сброс\r\n  void L57_Reset_Trans_Data(void)\r\n  {\r\n    L_trans=NULL;\r\n  "+
+  +"  L0_trans=NULL;\r\n    r_trans=NULL;\r\n    G_trans=NULL;\r\n  };\r\n  // Соз"+
+  +"дание всех параметров передачи\r\n  void L57_Create_Trans_Data(void);\r\n\r"+
+  +"\n  // Хранилища для проверки изменения переменных\r\n  double L_old;\r\n  "+
+  +"double L0_old;\r\n  double r_old;\r\n  double G_old;\r\n  // Инициализация х"+
+  +"ранилищ значений\r\n  void L57_Init_Old_Data(void)\r\n  {\r\n    L_old=rdsbc"+
+  +"ppHugeDouble;\r\n    L0_old=rdsbcppHugeDouble;\r\n    r_old=rdsbcppHugeDou"+
+  +"ble;\r\n    G_old=rdsbcppHugeDouble;\r\n  };\r\n\r\n  // Выходные таблицы argm"+
+  +"ax(x)\r\n  L57_Table1ArgFuncData _OneargArgMaxF[L57_ONEARG_ARGMAX_CNT];\r"+
+  +"\n\r\n\r\n$CLASSEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактиро"+
+  +"вания пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#defin"+
+  +"e L57MS_AFTERCLASS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57M"+
+  +"S_AFTERCLASS\r\n\r\n// Экспорт текста функции для взаимодействия с другими"+
+  +" блоками по связям\r\nchar *rdsbcppBlockClass::_FuncExportText=\"V G V \\n"+
+  +"\"\r\n\"V L V 0\\n\"\r\n\"V L0 V 0\\n\"\r\n\"V r V 0\\n\"\r\n\"V V V 0\\n\"\r\n\"V Y V 0\\n\"\r\n\""+
+  +"F\\n\"\r\n\"T\\n\"\r\n\"X\\n\"\r\n\"|if (L0*Y<=V) \\n\"\r\n\"|\\treturn V+(L-L0)*Y-Y*Y/(2.0"+
+  +"*r)-(1+G)*V;\\n\"\r\n\"|return 0;\\n\"\r\n\"}\\n\"\r\n\"#ORDER#\\n\"\r\n\"Y\\n\"\r\n\"V\\n\"\r\n\"L\\"+
+  +"n\"\r\n\"L0\\n\"\r\n\"r\\n\"\r\n\"G\";\r\n\r\n// Инициализация фиксированных значений\r\nvo"+
+  +"id rdsbcppBlockClass::L57_Init_Fixed_Data(void)\r\n{\r\n    Y_0=0;\r\n    Y_"+
+  +"min=0;\r\n    Y_max=50;\r\n    Y_step=0.1;\r\n    Y_end=0.01;\r\n    V_0=0;\r\n "+
+  +"   V_min=0;\r\n    V_max=100;\r\n    V_step=0.1;\r\n    V_end=0.01;\r\n\r\n}\r\n//"+
+  +"----------------------------------------------------------------------"+
+  +"-\r\n\r\n// Создание всех параметров передачи\r\nvoid rdsbcppBlockClass::L57"+
+  +"_Create_Trans_Data(void)\r\n{\r\n  // Стационарных входов: 4\r\n  // Максими"+
+  +"зируемых параметров: 2\r\n  _Transfer.ClearParameters();\r\n  _Transfer.En"+
+  +"largeParameters(4+2*5);\r\n\r\n  L_trans=_Transfer.AddParameterRds(\"L\",L57"+
+  +"_VARSUFFIX_NONE,FALSE,L.Num(),&L);\r\n  L0_trans=_Transfer.AddParameterR"+
+  +"ds(\"L0\",L57_VARSUFFIX_NONE,FALSE,L0.Num(),&L0);\r\n  r_trans=_Transfer.A"+
+  +"ddParameterRds(\"r\",L57_VARSUFFIX_NONE,FALSE,r.Num(),&r);\r\n  G_trans=_T"+
+  +"ransfer.AddParameterRds(\"G\",L57_VARSUFFIX_NONE,FALSE,G.Num(),&G);\r\n\r\n "+
+  +" _Transfer.AddParameter(\"Y\",L57_VARSUFFIX_0,FALSE,-1,&Y_0);\r\n  _Transf"+
+  +"er.AddParameter(\"Y\",L57_VARSUFFIX_MIN,FALSE,-1,&Y_min);\r\n  _Transfer.A"+
+  +"ddParameter(\"Y\",L57_VARSUFFIX_MAX,FALSE,-1,&Y_max);\r\n  _Transfer.AddPa"+
+  +"rameter(\"Y\",L57_VARSUFFIX_STEP,FALSE,-1,&Y_step);\r\n  _Transfer.AddPara"+
+  +"meter(\"Y\",L57_VARSUFFIX_END,FALSE,-1,&Y_end);\r\n\r\n  _Transfer.AddParame"+
+  +"ter(\"V\",L57_VARSUFFIX_0,FALSE,-1,&V_0);\r\n  _Transfer.AddParameter(\"V\","+
+  +"L57_VARSUFFIX_MIN,FALSE,-1,&V_min);\r\n  _Transfer.AddParameter(\"V\",L57_"+
+  +"VARSUFFIX_MAX,FALSE,-1,&V_max);\r\n  _Transfer.AddParameter(\"V\",L57_VARS"+
+  +"UFFIX_STEP,FALSE,-1,&V_step);\r\n  _Transfer.AddParameter(\"V\",L57_VARSUF"+
+  +"FIX_END,FALSE,-1,&V_end);\r\n\r\n}\r\n//------------------------------------"+
+  +"-----------------------------------\r\n\r\n// Проверка изменения переменны"+
+  +"х\r\n// *pChgSignalOn взводится при наличии сигнала изменения (независим"+
+  +"о от фактического изменения)\r\nBOOL rdsbcppBlockClass::L57InputsChange("+
+  +"BOOL _force,BOOL *pChgSignalOn)\r\n{ BOOL _changes=FALSE;\r\n\r\n  // Стацио"+
+  +"нарных вещественных входов: 4\r\n  // Служебных вещественных входов: 0\r\n"+
+  +"  // Итого вещественных: 4\r\n\r\n  // Вещественные входы\r\n  if(_allinval_"+
+  +"dchg!=0 || _force)\r\n    { _allinval_dchg=0;\r\n      _changes=_force;\r\n "+
+  +"     if(pChgSignalOn) *pChgSignalOn=TRUE;\r\n\r\n      if(L_old!=L)\r\n     "+
+  +"   { _changes=TRUE;\r\n          _Transfer.TransferParameter(rdsbcppBloc"+
+  +"kData->Block,L_trans,_Transfer.DestBlocks,TRUE);\r\n        }\r\n      if("+
+  +"L0_old!=L0)\r\n        { _changes=TRUE;\r\n          _Transfer.TransferPar"+
+  +"ameter(rdsbcppBlockData->Block,L0_trans,_Transfer.DestBlocks,TRUE);\r\n "+
+  +"       }\r\n      if(r_old!=r)\r\n        { _changes=TRUE;\r\n          _Tra"+
+  +"nsfer.TransferParameter(rdsbcppBlockData->Block,r_trans,_Transfer.Dest"+
+  +"Blocks,TRUE);\r\n        }\r\n      if(G_old!=G)\r\n        { _changes=TRUE;"+
+  +"\r\n          _Transfer.TransferParameter(rdsbcppBlockData->Block,G_tran"+
+  +"s,_Transfer.DestBlocks,TRUE);\r\n        }\r\n\r\n\r\n      if(_changes)\r\n    "+
+  +"    { // Запоминание изменившихся\r\n          L_old=L;\r\n          L0_ol"+
+  +"d=L0;\r\n          r_old=r;\r\n          G_old=G;\r\n        }\r\n    }\r\n\r\n  /"+
+  +"/ Матричные входы (матрицы, массивы, функции)\r\n\r\n  return _changes;\r\n}"+
+  +"\r\n//------------------------------------------------------------------"+
+  +"-----\r\n\r\n// Занесение стационарных переменных в вычислитель функции\r\nv"+
+  +"oid rdsbcppBlockClass::L57InputsToCalc(void)\r\n{\r\n  _Calculator.L=L;\r\n "+
+  +" _Calculator.L0=L0;\r\n  _Calculator.r=r;\r\n  _Calculator.G=G;\r\n}\r\n//----"+
+  +"-------------------------------------------------------------------\r\n\r"+
+  +"\n// Инициализация набора максимизируемых параметров\r\nvoid rdsbcppBlock"+
+  +"Class::L57InitParams(void)\r\n{\r\n  _Params.P[0].FuncVal=Y_0; // 0\r\n  _Pa"+
+  +"rams.P[0].Min=Y_min; // 0\r\n  _Params.P[0].Max=Y_max; // 50\r\n  _Params."+
+  +"P[0].StartStep=Y_step; // 0.1\r\n  _Params.P[0].EndStep=Y_end; // 0.01\r\n"+
+  +"\r\n  _Params.P[1].FuncVal=V_0; // 0\r\n  _Params.P[1].Min=V_min; // 0\r\n  "+
+  +"_Params.P[1].Max=V_max; // 100\r\n  _Params.P[1].StartStep=V_step; // 0."+
+  +"1\r\n  _Params.P[1].EndStep=V_end; // 0.01\r\n\r\n}\r\n//---------------------"+
+  +"--------------------------------------------------\r\n\r\n// Занесение тек"+
+  +"ущих значений параметров в вычислитель функции\r\nvoid rdsbcppBlockClass"+
+  +"::L57ParamsToCalc(void)\r\n{\r\n  _Calculator.Y=_Params.P[0].Current;\r\n  _"+
+  +"Calculator.V=_Params.P[1].Current;\r\n}\r\n//-----------------------------"+
+  +"------------------------------------------\r\n\r\n// Установить готовность"+
+  +" всех простых табличных функций\r\nvoid rdsbcppBlockClass::_SetAllSimple"+
+  +"TableFuncReady(char flag)\r\n{\r\n}\r\n//-----------------------------------"+
+  +"------------------------------------\r\n\r\n// Очистить выходные матрицы в"+
+  +"сех табличных функций\r\nvoid rdsbcppBlockClass::_ClearAllTableFunc(void"+
+  +")\r\n{\r\n  argmax_func.Resize(0,0);\r\n}\r\n//-------------------------------"+
+  +"----------------------------------------\r\n\r\n\r\n\r\n// Заполнение массива "+
+  +"генерации выходных таблиц argmax(x)\r\nBOOL rdsbcppBlockClass::_OneargAr"+
+  +"gMaxF_fill(void)\r\n{ L57_Table1ArgFuncData *f;\r\n  L57_Parameter *p;\r\n  "+
+  +"L57_TableFiller *t;\r\n\r\n  f=_OneargArgMaxF+0;\r\n  p=_Params.P+0; // Y\r\n "+
+  +"   f->ArgsArray=&(p->Array);\r\n    f->ArgIndex=0; // Y\r\n    f->NResults"+
+  +"=2+1; // Значения всех аргументов и самой функции\r\n    if(!f->Allocate"+
+  +"ResultArrays()) return FALSE;\r\n      // Выходная матрица argmax_func ("+
+  +"столбцов результатов: 1)\r\n      t=f->Output.Add1Arg(&argmax_func,NULL,"+
+  +"1);\r\n      // L57_ERROR()\r\n      t->MatrCol[0]=0+1;\r\n      t->ResultN["+
+  +"0]=2;\r\n\r\n  return TRUE;\r\n}\r\n//----------------------------------------"+
+  +"-------------------------------\r\n\r\n\r\n// Переписать максимумы из AllMax"+
+  +"_out в отдельные массивы (генерируется)\r\nBOOL rdsbcppBlockClass::L57Al"+
+  +"lMaxToArrays(void)\r\n{\r\n#ifdef L57_PARAMSCOUNT\r\n  int n_max=AllMax_out."+
+  +"Rows();\r\n  // Аргументы\r\n  if(!Y_res.Resize(n_max))\r\n    return FALSE;"+
+  +"\r\n  for(int i=0;i<n_max;i++)\r\n    Y_res[i]=AllMax_out[i][0];\r\n  if(!V_"+
+  +"res.Resize(n_max))\r\n    return FALSE;\r\n  for(int i=0;i<n_max;i++)\r\n   "+
+  +" V_res[i]=AllMax_out[i][1];\r\n\r\n  // Значения\r\n  if(!_max_res.Resize(n_"+
+  +"max))\r\n    return FALSE;\r\n  for(int i=0;i<n_max;i++)\r\n    _max_res[i]="+
+  +"AllMax_out[i][L57_PARAMSCOUNT];\r\n\r\n  // Фильтрованные данные\r\n  if(n_m"+
+  +"ax)\r\n    { BOOL _fchg=FALSE;\r\n      double _v,_vn;\r\n      if(!_fchg)\r\n"+
+  +"        { _v=Y_res_f;\r\n          _vn=Y_res[0];\r\n          if(_v==rdsbc"+
+  +"ppHugeDouble || (_vn!=rdsbcppHugeDouble && fabs(_v-_vn)>_Params.P[0].E"+
+  +"ndStep*1.1) )\r\n            _fchg=TRUE;\r\n        }\r\n      if(!_fchg)\r\n "+
+  +"       { _v=V_res_f;\r\n          _vn=V_res[0];\r\n          if(_v==rdsbcp"+
+  +"pHugeDouble || (_vn!=rdsbcppHugeDouble && fabs(_v-_vn)>_Params.P[1].En"+
+  +"dStep*1.1) )\r\n            _fchg=TRUE;\r\n        }\r\n      if((!_fchg) &&"+
+  +" DfFilter_setup!=rdsbcppHugeDouble)\r\n        { _v=_max_res_f;\r\n       "+
+  +"   _vn=_max_res[0];\r\n          if(_v==rdsbcppHugeDouble || (_vn!=rdsbc"+
+  +"ppHugeDouble && fabs(_v-_vn)>DfFilter_setup) )\r\n            _fchg=TRUE"+
+  +";\r\n        }\r\n\r\n      if(_fchg)\r\n        {\r\n          Y_res_f=Y_res[0]"+
+  +";\r\n          V_res_f=V_res[0];\r\n          _max_res_f=_max_res[0];\r\n   "+
+  +"     }\r\n    }\r\n#endif // ifdef L57_PARAMSCOUNT\r\n\r\n  return TRUE;\r\n}\r\n/"+
+  +"/---------------------------------------------------------------------"+
+  +"--\r\n\r\n\r\n$INIT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактиров"+
+  +"ания пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define"+
+  +" L57MS_INIT\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_INIT\r"+
+  +"\n\r\n$START\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования"+
+  +" пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L57"+
+  +"MS_START\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_START\r\n\r"+
+  +"\n$CALCMODE\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактировани"+
+  +"я пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L5"+
+  +"7MS_CALCMODE\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_CALC"+
+  +"MODE\r\n\r\n$LOADTEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редакт"+
+  +"ирования пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#de"+
+  +"fine L57MS_LOADPARAMS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L"+
+  +"57MS_LOADPARAMS\r\n$SAVETEXT\r\n/* ВНИМАНИЕ! Эта модель не предназначена д"+
+  +"ля редактирования пользователем,\r\nее текст генерируется автоматически "+
+  +"*/\r\n\r\n#define L57MS_SAVEPARAMS\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r"+
+  +"\n#undef L57MS_SAVEPARAMS\r\n\r\n$OTHER\r\n/* ВНИМАНИЕ! Эта модель не предназ"+
+  +"начена для редактирования пользователем,\r\nее текст генерируется автома"+
+  +"тически */\r\n\r\n#define L57MS_OTHER\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cp"+
+  +"p>\r\n#undef L57MS_OTHER\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.IsFuncSource"+
+  +"\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирования пользов"+
+  +"ателем,\r\nее текст генерируется автоматически */\r\n\r\nResult=1;\r\n\r\n$FUNC "+
+  +"\"IPU.L57.UserFuncTransfer.AcceptFunction\"\r\n/* ВНИМАНИЕ! Эта модель не "+
+  +"предназначена для редактирования пользователем,\r\nее текст генерируется"+
+  +" автоматически */\r\n\r\n#define L57MS_ACCEPTFUNC\r\n#include <RdsL57Mk2/L57"+
+  +"Mk2ArgMax.cpp>\r\n#undef L57MS_ACCEPTFUNC\r\n\r\n$FUNC \"IPU.L57.UserFuncTran"+
+  +"sfer.AcceptParameter\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для ре"+
+  +"дактирования пользователем,\r\nее текст генерируется автоматически */\r\n\r"+
+  +"\n#define L57MS_ACCEPTPARAM\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#un"+
+  +"def L57MS_ACCEPTPARAM\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.IsParameterTr"+
+  +"ansferredWithFunc\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редак"+
+  +"тирования пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#d"+
+  +"efine L57MS_CHECKTRANSFUNC\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#un"+
+  +"def L57MS_CHECKTRANSFUNC\r\n\r\n\r\n$FUNC \"IPU.L57.UserFuncTransfer.CheckPar"+
+  +"amTransfer\"\r\n/* ВНИМАНИЕ! Эта модель не предназначена для редактирован"+
+  +"ия пользователем,\r\nее текст генерируется автоматически */\r\n\r\n#define L"+
+  +"57MS_CHECKTRANSFUNC2\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r\n#undef L5"+
+  +"7MS_CHECKTRANSFUNC2\r\n\r\n\r\n$RESET\r\n/* ВНИМАНИЕ! Эта модель не предназнач"+
+  +"ена для редактирования пользователем,\r\nее текст генерируется автоматич"+
+  +"ески */\r\n\r\n#define L57MS_RESET\r\n#include <RdsL57Mk2/L57Mk2ArgMax.cpp>\r"+
+  +"\n#undef L57MS_RESET\r\n\r\n\r\n$VARCHECK\r\n/* ВНИМАНИЕ! Эта модель не предназ"+
+  +"начена для редактирования пользователем,\r\nее текст генерируется автома"+
+  +"тически */\r\n\r\n#define L57MS_VARCHECK\r\n#include <RdsL57Mk2/L57Mk2ArgMax"+
+  +".cpp>\r\n#undef L57MS_VARCHECK\r\n\r\n$DRAWADD\r\n/* ВНИМАНИЕ! Эта модель не п"+
+  +"редназначена для редактирования пользователем,\r\nее текст генерируется "+
+  +"автоматически */\r\n\r\n#define L57MS_DRAWADDITIONAL\r\n#include <RdsL57Mk2/"+
+  +"L57Mk2ArgMax.cpp>\r\n#undef L57MS_DRAWADDITIONAL\r\n\r\n$HINT\r\n/* ВНИМАНИЕ! "+
+  +"Эта модель не предназначена для редактирования пользователем,\r\nее текс"+
+  +"т генерируется автоматически */\r\n\r\n#define L57MS_HINT\r\n#include <RdsL5"+
+  +"7Mk2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_HINT\r\n\r\n$POPUP\r\n/* ВНИМАНИЕ! Эта "+
+  +"модель не предназначена для редактирования пользователем,\r\nее текст ге"+
+  +"нерируется автоматически */\r\n\r\n#define L57MS_POPUP\r\n#include <RdsL57Mk"+
+  +"2/L57Mk2ArgMax.cpp>\r\n#undef L57MS_POPUP\r\n\r\n\r\n$HIDDEN\r\n{N\r\n W64,64,64,6"+
+  +"4,64\r\n {V\r\n  NY\r\n  TV\r\n  V=0\r\n  [=0\r\n  ]=50\r\n  D=0.1\r\n  E=0.01\r\n }\r\n {"+
+  +"V\r\n  NV\r\n  TV\r\n  V=0\r\n  [=0\r\n  ]=100\r\n  D=0.1\r\n  E=0.01\r\n }\r\n}\r\n{I\r\n W"+
+  +"64,64,64\r\n {V\r\n  NL\r\n  TV\r\n  V=0\r\n }\r\n {V\r\n  NL0\r\n  TV\r\n  V=0\r\n }\r\n {V"+
+  +"\r\n  Nr\r\n  TV\r\n  V=0\r\n }\r\n {V\r\n  NG\r\n  TV\r\n  V=\r\n }\r\n}\r\n{F\r\n {F0\r\n  T\r\n"+
+  +"  V\r\n  I0\r\n  C\r\n  |if (L0*Y<=V) \r\n  |	return V+(L-L0)*Y-Y*Y/(2.0*r)-(1"+
+  +"+G)*V;\r\n  |return 0;\r\n }\r\n}\r\n{T\r\n W81,93,72,76\r\n {F\r\n  Nargmax\r\n  Tmax"+
+  +"\r\n  AY\r\n  R%0\r\n }\r\n}\r\n{O\r\n :EndStep=1\r\n}\r\n$OPTIONS\r\n  tabs $GLOBAL\r\n  "+
+  +"window pos 18 164 size 1214 837 hdiv 337 vdiv 356 fdiv 334 hidevar\r\n  "+
+  +"svc 0 90 1 73 2 90 3 90\r\n  dvc 0 90 1 90 2 90\r\n  fnc 0 90 1 90 2 90\r\n "+
+  +" pvc 0 90 1 90 2 100\r\n  dvcheck 1\r\n  indexcheck 0\r\n  ignorewarnings 1\r"+
+  +"\n  errorretrycompile 1\r\n  customerrmsg 1 showblock\r\n  customerrtransl "+
+  +"\"$CURLANG$\\Dll\\L57.bin\" \"L57mdl\" \"CustomErrSingleFunc\"\r\n  autoreadonly"+
+  +"editor 1\r\n  genvartypemacros 0\r\n  matherr 1\r\n  catchall 0\r\n  dvstart 1"+
+  +"\r\n  searchlinks off\r\n  undefvars 1\r\n\r\n" 
+ end
+
+system name "Sys1"
+ begin
+  layers
+   begin
+    layer id 1 name "Связи"
+    layer id 2 name "Данные"
+    config name "Общая" layers =2 *1 end
+    config name "Панель управления" current layers =2 -1 end
+   end
+  editor
+   begin
+    window maximized pos 761 136 size 786 734 open printbar 592 2 layerbar 141 2 zoombar 452 2 displaybar 654 2 calcbar 11 2 status
+    field size 2000 2000
+    grid size 5 5 show snap color 16711680
+    zoom 67.14961554
+    crosscolor 16711680
+    blocknames show spacing 7 font "Arial" height 9 color 0
+    varnames show font "Arial" height 8
+   end
+  print
+   begin
+   end
+  content
+   begin
+    dllblock name "DDisplay1" id 1
+     begin
+      pos 175 150
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 0.352113 initial
+       frame border 0 fill 12632256
+      enddlldata
+      rect 75 19
+     end
+    dllblock name "Цена сырья L0" id 2
+     begin
+      pos 20 175
+      layer id 2
+      name pos 115 83
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 1
+        signal name "Ready" out default 0
+        double name "Val" out menu hide default "0"
+        signal name "SetMin" in run default 0
+        signal name "SetAvg" in run default 0
+        signal name "SetMax" in run default 0
+        double name "ExtSetting" in run default "0"
+        signal name "ExtSettingS" default 0
+        double name "VMin" in run default "0"
+        double name "VMax" in run default "10"
+        signal name "DiapS" default 0
+       end
+      auto
+       begin
+        var "ExtSetting" ctrl "ExtSettingS"
+        var "VMin" ctrl "DiapS"
+        var "VMax" ctrl "DiapS"
+       end
+      dll file "$DLL$\\Common.dll" func "TrackBar" draw mouse setup "" auto
+      dlldata text
+       flags 60 min "0" max "10" back 12632256 frame 0 llcolor 16777215 ldcolor 14935011 dlcolor 10526880 ddcolor 6908265 hcolor 15790320 slcolor 15790320 htype 0 hsize 15 hside 28 slot 5 trackshift 5 scaleshift 5 ticksize 7 tickstep "0.5" font font "Arial" height 13 charset 135 color 0 tickcolor 0 dec 1 smticksize 4 smtickcnt 5 resetto "3.59154929577"
+      enddlldata
+      rect 230 70
+     end
+    dllblock name "DDisplay2" id 5
+     begin
+      pos 175 285
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 2.35915 initial
+       frame border 0 fill 12632256
+      enddlldata
+      rect 75 19
+     end
+    dllblock name "Тип агента r" id 6
+     begin
+      pos 20 310
+      layer id 2
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 1
+        signal name "Ready" out default 0
+        double name "Val" out menu hide default "0"
+        signal name "SetMin" in run default 0
+        signal name "SetAvg" in run default 0
+        signal name "SetMax" in run default 0
+        double name "ExtSetting" in run default "0"
+        signal name "ExtSettingS" default 0
+        double name "VMin" in run default "0"
+        double name "VMax" in run default "5"
+        signal name "DiapS" default 0
+       end
+      auto
+       begin
+        var "ExtSetting" ctrl "ExtSettingS"
+        var "VMin" ctrl "DiapS"
+        var "VMax" ctrl "DiapS"
+       end
+      dll file "$DLL$\\Common.dll" func "TrackBar" draw mouse setup "" auto
+      dlldata text
+       flags 60 min "0" max "5" back 12632256 frame 0 llcolor 16777215 ldcolor 14935011 dlcolor 10526880 ddcolor 6908265 hcolor 15790320 slcolor 15790320 htype 0 hsize 15 hside 28 slot 5 trackshift 5 scaleshift 5 ticksize 7 tickstep "0.5" font font "Arial" height 13 charset 135 color 0 tickcolor 0 dec 1 smticksize 4 smtickcnt 5 resetto "3.87323943662"
+      enddlldata
+      rect 230 70
+     end
+    dllblock name "DDisplay3" id 9
+     begin
+      pos 175 415
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 21.6667 initial
+       frame border 0 fill 65280
+      enddlldata
+      rect 75 19
+     end
+    dllblock name "действие агента у" id 10
+     begin
+      pos 20 440
+      layer id 2
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 1
+        signal name "Ready" out default 0
+        double name "Val" out menu hide default "0"
+        signal name "SetMin" in run default 0
+        signal name "SetAvg" in run default 0
+        signal name "SetMax" in run default 0
+        double name "ExtSetting" in run default "0"
+        signal name "ExtSettingS" default 0
+        double name "VMin" in run default "0"
+        double name "VMax" in run default "50"
+        signal name "DiapS" default 0
+       end
+      auto
+       begin
+        var "ExtSetting" ctrl "ExtSettingS"
+        var "VMin" ctrl "DiapS"
+        var "VMax" ctrl "DiapS"
+       end
+      dll file "$DLL$\\Common.dll" func "TrackBar" draw mouse setup "" auto
+      dlldata text
+       flags 60 min "0" max "50" back 65280 frame 0 llcolor 16777215 ldcolor 14935011 dlcolor 10526880 ddcolor 6908265 hcolor 15790320 slcolor 15790320 htype 0 hsize 15 hside 28 slot 5 trackshift 5 scaleshift 5 ticksize 7 tickstep "0.5" font font "Arial" height 13 charset 135 color 0 tickcolor 0 dec 1 smticksize 4 smtickcnt 5 resetto "21.6667"
+      enddlldata
+      rect 230 70
+     end
+    dllblock name "DDisplay4" id 13
+     begin
+      pos 175 15
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 7.53521 initial
+       frame border 0 fill 12632256
+      enddlldata
+      rect 75 19
+     end
+    dllblock name "Рыночная цена L" id 14
+     begin
+      pos 20 40
+      layer id 2
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 1
+        signal name "Ready" out default 0
+        double name "Val" out menu hide default "0"
+        signal name "SetMin" in run default 0
+        signal name "SetAvg" in run default 0
+        signal name "SetMax" in run default 0
+        double name "ExtSetting" in run default "0"
+        signal name "ExtSettingS" default 0
+        double name "VMin" in run default "0"
+        double name "VMax" in run default "15"
+        signal name "DiapS" default 0
+       end
+      auto
+       begin
+        var "ExtSetting" ctrl "ExtSettingS"
+        var "VMin" ctrl "DiapS"
+        var "VMax" ctrl "DiapS"
+       end
+      dll file "$DLL$\\Common.dll" func "TrackBar" draw mouse setup "" auto
+      dlldata text
+       flags 60 min "0" max "15" back 12632256 frame 0 llcolor 16777215 ldcolor 14935011 dlcolor 10526880 ddcolor 6908265 hcolor 15790320 slcolor 15790320 htype 0 hsize 15 hside 28 slot 5 trackshift 5 scaleshift 5 ticksize 7 tickstep "0.5" font font "Arial" height 13 charset 135 color 0 tickcolor 0 dec 1 smticksize 4 smtickcnt 5 resetto "7.53521126761"
+      enddlldata
+      rect 230 70
+     end
+    dllblock name "L57_FCalc1" id 18
+     begin
+      pos 365 30
+      layer id 1
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "_Start" in run default 1
+        signal name "_Ready" out default 0
+        short name "Aux_in" in hide default 0
+        short name "Aux_out" out hide default 0
+        char name "Func_in" in menu default 0
+        char name "Func_out" out menu default 0
+        double name "Calc_out" out menu default "?"
+        signal name "_allinval_dchg" default 1
+        double name "Y" in menu run default "0"
+        double name "L" in menu run default "0"
+        double name "L0" in menu run default "0"
+        double name "r" in menu run default "0"
+        double name "G" in menu run default "0"
+        double name "V" in menu run default "0"
+       end
+      auto
+       begin
+        var "Y" ctrl "_allinval_dchg"
+        var "L" ctrl "_allinval_dchg"
+        var "L0" ctrl "_allinval_dchg"
+        var "r" ctrl "_allinval_dchg"
+        var "G" ctrl "_allinval_dchg"
+        var "V" ctrl "_allinval_dchg"
+       end
+      layout rect 140 80 fill 16777215 line 0 text "Вычисление\r\nприбыли агента" font "Arial" height 13 color 0
+      dll file "L57_FCalc.dll" func "rdsbcppBlockEntryPoint" setup "" auto
+      dlldata text
+       rdsbcppsetupparameters
+       begin
+       var TR_params 0
+       var TR_text "Вычисление\nфункции"
+       end
+      enddlldata
+      autocomp file "$DLL$\\Common.dll" func "SearchComp" model "L57_FCalc.mdl" alt "C:\\Users\\Kolya\\RDS\\L5\\L57_FCalc.mdl\nC:\\Users\\Kolya\\RDS\\L5\\main.rds"
+     end
+    dllblock name "L57_ArgMax1" id 25
+     begin
+      pos 455 620
+      layer id 1
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "_Start" in run default 1
+        signal name "_Ready" out default 0
+        short name "Aux_in" in hide default 0
+        short name "Aux_out" out hide default 0
+        signal name "Start_cmd" in menu run default 0
+        signal name "Restart_cmd" in menu run default 0
+        matrix logical oneindex name "Enabled_in" in run default "[ ] 0"
+        signal name "_Enabled_chg" default 1
+        int name "_Stage" out default 0
+        int name "_SubStage" out default 0
+        logical name "_results_ok" default 0
+        logical name "_enabled_res" default 1
+        logical name "Complete_out" out default 0
+        logical name "Error_out" out default 0
+        signal name "Finished_out" out default 0
+        signal name "Started_out" out default 0
+        double name "Time_out" out default "?"
+        char name "Func_in" in menu default 0
+        char name "Func_out" out menu default 0
+        signal name "_allinval_dchg" default 1
+        double name "L" in menu run default "0"
+        double name "L0" in menu run default "0"
+        double name "r" in menu run default "0"
+        double name "G" in menu run default "0"
+        double name "V" in menu run default "0"
+        matrix double name "argmax_func" out menu default "[ ] ?"
+        matrix double name "AllMax_out" out default "[ ] ?"
+        double name "Progress_out" out default "0"
+        matrix double oneindex name "Y_res" out menu default "[ ] ?"
+        double name "Y_res_f" out default "?"
+        matrix double oneindex name "_max_res" out menu default "[ ] ?"
+        double name "_max_res_f" out default "?"
+       end
+      auto
+       begin
+        var "Enabled_in" ctrl "_Enabled_chg"
+        var "AllMax_out" ctrl "_results_ok"
+        var "Complete_out" ctrl "_results_ok"
+        var "Error_out" ctrl "_results_ok"
+        var "L" ctrl "_allinval_dchg"
+        var "L0" ctrl "_allinval_dchg"
+        var "r" ctrl "_allinval_dchg"
+        var "G" ctrl "_allinval_dchg"
+        var "V" ctrl "_allinval_dchg"
+        var "argmax_func" ctrl "_results_ok"
+        var "Y_res" ctrl "_results_ok"
+        var "Y_res_f" ctrl "_results_ok"
+        var "_max_res" ctrl "_results_ok"
+        var "_max_res_f" ctrl "_results_ok"
+       end
+      layout rect 155 135 fill 16777215 line 0 text "Поиск действия агента,\r\nмаксимизирующегоего\r\nприбыль" font "Arial" height 13 color 0
+      dll file "L57_ArgMax.dll" func "rdsbcppBlockEntryPoint" setup "" auto
+      dlldata text
+       rdsbcppsetupparameters
+       begin
+       var deepsearch_setup 1
+       var noautostart_setup 0
+       var ChunkSizeMb_setup "10"
+       var tactcount_setup 1000
+       var EqualMaxDelta_setup "9.99999974738e-05"
+       var PrecToEndSteps_setup 1
+       var PrecToDf_setup 0
+       var DfCycles_setup 15
+       var DfDelta_setup "9.99999974738e-06"
+       var PrecGridSize_setup 1
+       var NoPlateau_setup 1
+       var TabAfterCalc_setup 1
+       var TabPrecCalc_setup 1
+       var Tab_PrecToEndSteps_setup 1
+       var Tab_PrecToDf_setup 0
+       var Tab_DfCycles_setup 5
+       var Tab_DfDelta_setup "9.99999974738e-06"
+       var Tab_PrecGridSize_setup 1
+       var DfFilter_setup "9.99999974738e-06"
+       var TR_params 0
+       var TR_text "Внутренний\r\nмаксимизатор"
+       var StartCycles_setup 20
+       end
+      enddlldata
+      autocomp file "$DLL$\\Common.dll" func "SearchComp" model "L57_ArgMax.mdl" alt "C:\\Users\\Kolya\\RDS\\L5\\L57_ArgMax.mdl\nC:\\Users\\Kolya\\RDS\\L5\\main.rds"
+     end
+    dllblock name "DDisplay5" id 26
+     begin
+      pos 645 30
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 49.8584 initial
+       frame border 0 fill 12632256
+       caption text "Прибыль агента" font "Arial" height 15 charset 1 color 0
+      enddlldata
+      rect 345 19
+     end
+    dllblock name "DDisplay6" id 27
+     begin
+      pos 645 90
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 16.9438 initial
+       frame border 0 fill 12632256
+       caption text "Лок. Оптимальное действие агента" font "Arial" height 15 charset 1 color 0
+      enddlldata
+      rect 345 19
+     end
+    dllblock name "DDisplay7" id 28
+     begin
+      pos 645 60
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 54.5814 initial
+       frame border 0 fill 12632256
+       caption text "Лок. Максимальная прибыль агента" font "Arial" height 15 charset 1 color 0
+      enddlldata
+      rect 345 19
+     end
+    dllblock name "L57_FCalc2" id 34
+     begin
+      pos 645 140
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "_Start" in run default 1
+        signal name "_Ready" out default 0
+        short name "Aux_in" in hide default 0
+        short name "Aux_out" out hide default 0
+        char name "Func_in" in menu default 0
+        char name "Func_out" out menu default 0
+        double name "Calc_out" out menu default "?"
+        signal name "_allinval_dchg" default 1
+        double name "f" in menu run default "0"
+        double name "fopt" in menu run default "0"
+       end
+      auto
+       begin
+        var "f" ctrl "_allinval_dchg"
+        var "fopt" ctrl "_allinval_dchg"
+       end
+      layout rect 140 35 fill 16777215 line 0 text "Эффективность (%) =" font "Arial" height 13 color 0
+      dll file "L57_FCalc1.dll" func "rdsbcppBlockEntryPoint" setup "" auto
+      dlldata text
+       rdsbcppsetupparameters
+       begin
+       var TR_params 0
+       var TR_text "Вычисление\nфункции"
+       end
+      enddlldata
+      autocomp file "$DLL$\\Common.dll" func "SearchComp" model "L57_FCalc1.mdl" alt "C:\\Users\\Kolya\\RDS\\L5\\L57_FCalc1.mdl\nC:\\Users\\Kolya\\RDS\\L5\\main.rds"
+     end
+    dllblock name "Semaphore1" id 35
+     begin
+      pos 785 140
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 1
+        signal name "Ready" out default 0
+        double name "x" in menu run default "0"
+        double name "lev1" in menu run default "33"
+        double name "lev2" in menu run default "66"
+        int name "color" default 16777215
+        logical name "high" out menu default 0
+        logical name "med" out menu default 0
+        logical name "low" out menu default 0
+       end
+      dll file "$DLL$\\L57.dll" func "RYG" draw setup "" auto
+      dlldata text
+       rdsbcppsetupparameters
+       begin
+       var lev1_set "33"
+       var lev2_set "66"
+       var lev1_flag 0
+       var lev2_flag 0
+       var low_color 255
+       var med_color 65535
+       var high_color 65280
+       var border_color 0
+       var border_flag 1
+       var header_text "Заголовок"
+       var header_flag 0
+       var header_height 16
+       var header_color 0
+       var header_bold 0
+       var header_italic 0
+       var value_flag 1
+       var value_height 16
+       var value_color 0
+       var value_bold 0
+       var value_italic 0
+       var value_dec 1
+       end
+      enddlldata
+      rect 95 35
+     end
+    dllblock name "Критерии оценки эффективности" id 36
+     begin
+      pos 880 135
+      layer id 1
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in run hide default "0"
+        double name "edit" out menu hide default "0"
+        signal name "v_sig" default 0
+        logical name "Enabled" in run default 1
+        signal name "e_sig" default 0
+       end
+      auto
+       begin
+        var "v" ctrl "v_sig"
+        var "Enabled" ctrl "e_sig"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh mouse setup "" auto
+      dlldata text
+       value prec 2 font "Arial" height 15 color 0 set 50 initial 50
+       frame border 0 fill 16777215
+       caption text "R-Y" font "Arial" height 15 charset 1 color 0
+       input l nofirst inc 0.01 updown arrwidth 13
+       disabled 12632256 8421504
+      enddlldata
+      rect 115 19
+     end
+    dllblock name "DEdit2" id 38
+     begin
+      pos 880 160
+      layer id 1
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in run hide default "0"
+        double name "edit" out menu hide default "0"
+        signal name "v_sig" default 0
+        logical name "Enabled" in run default 1
+        signal name "e_sig" default 0
+       end
+      auto
+       begin
+        var "v" ctrl "v_sig"
+        var "Enabled" ctrl "e_sig"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh mouse setup "" auto
+      dlldata text
+       value prec 2 font "Arial" height 15 color 0 set 80 initial 80
+       frame border 0 fill 16777215
+       caption text "Y-G" font "Arial" height 15 charset 1 color 0
+       input l nofirst inc 0.01 updown arrwidth 13
+       disabled 12632256 8421504
+      enddlldata
+      rect 115 19
+     end
+    dllblock name "L57_ArgMax2" id 43
+     begin
+      pos 240 740
+      layer id 1
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "_Start" in run default 1
+        signal name "_Ready" out default 0
+        short name "Aux_in" in hide default 0
+        short name "Aux_out" out hide default 0
+        signal name "Start_cmd" in menu run default 0
+        signal name "Restart_cmd" in menu run default 0
+        matrix logical oneindex name "Enabled_in" in run default "[ ] 0"
+        signal name "_Enabled_chg" default 1
+        int name "_Stage" out default 0
+        int name "_SubStage" out default 0
+        logical name "_results_ok" default 0
+        logical name "_enabled_res" default 1
+        logical name "Complete_out" out default 0
+        logical name "Error_out" out default 0
+        signal name "Finished_out" out default 0
+        signal name "Started_out" out default 0
+        double name "Time_out" out default "?"
+        char name "Func_in" in menu default 0
+        char name "Func_out" out menu default 0
+        signal name "_allinval_dchg" default 1
+        double name "L0" in menu run default "0"
+        double name "V" in menu run default "0"
+        double name "G" in menu run default "0"
+        matrix double name "argmax_func" out menu default "[ ] ?"
+        matrix double name "AllMax_out" out default "[ ] ?"
+        double name "Progress_out" out default "0"
+        matrix double oneindex name "Y_res" out menu default "[ ] ?"
+        double name "Y_res_f" out default "?"
+        matrix double oneindex name "L_res" out menu default "[ ] ?"
+        double name "L_res_f" out default "?"
+        matrix double oneindex name "r_res" out menu default "[ ] ?"
+        double name "r_res_f" out default "?"
+        matrix double oneindex name "_max_res" out menu default "[ ] ?"
+        double name "_max_res_f" out default "?"
+       end
+      auto
+       begin
+        var "Enabled_in" ctrl "_Enabled_chg"
+        var "AllMax_out" ctrl "_results_ok"
+        var "Complete_out" ctrl "_results_ok"
+        var "Error_out" ctrl "_results_ok"
+        var "L0" ctrl "_allinval_dchg"
+        var "V" ctrl "_allinval_dchg"
+        var "G" ctrl "_allinval_dchg"
+        var "argmax_func" ctrl "_results_ok"
+        var "Y_res" ctrl "_results_ok"
+        var "Y_res_f" ctrl "_results_ok"
+        var "L_res" ctrl "_results_ok"
+        var "L_res_f" ctrl "_results_ok"
+        var "r_res" ctrl "_results_ok"
+        var "r_res_f" ctrl "_results_ok"
+        var "_max_res" ctrl "_results_ok"
+        var "_max_res_f" ctrl "_results_ok"
+       end
+      layout rect 155 135 fill 16777215 line 0 text "Генерация зависимости\r\nоптимальной прибыли \r\nагента от рыночной цены\r\nи типа агента" font "Arial" height 13 color 0
+      dll file "L57_ArgMax1.dll" func "rdsbcppBlockEntryPoint" setup "" auto
+      dlldata text
+       rdsbcppsetupparameters
+       begin
+       var deepsearch_setup 1
+       var noautostart_setup 0
+       var ChunkSizeMb_setup "10"
+       var tactcount_setup 1000
+       var EqualMaxDelta_setup "9.99999974738e-05"
+       var PrecToEndSteps_setup 1
+       var PrecToDf_setup 0
+       var DfCycles_setup 15
+       var DfDelta_setup "9.99999974738e-06"
+       var PrecGridSize_setup 1
+       var NoPlateau_setup 1
+       var TabAfterCalc_setup 1
+       var TabPrecCalc_setup 1
+       var Tab_PrecToEndSteps_setup 1
+       var Tab_PrecToDf_setup 0
+       var Tab_DfCycles_setup 5
+       var Tab_DfDelta_setup "9.99999974738e-06"
+       var Tab_PrecGridSize_setup 1
+       var DfFilter_setup "9.99999974738e-06"
+       var TR_params 0
+       var TR_text "Внутренний\r\nмаксимизатор"
+       var StartCycles_setup 20
+       end
+      enddlldata
+      autocomp file "$DLL$\\Common.dll" func "SearchComp" model "L57_ArgMax1.mdl" alt "C:\\Users\\Kolya\\RDS\\L5\\L57_ArgMax1.mdl\nC:\\Users\\Kolya\\RDS\\L5\\main.rds"
+     end
+    dllblock name "MDInlineGraph1" id 44
+     begin
+      pos 640 220
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 0
+        signal name "Ready" out default 0
+        matrix double name "M" in menu run hide default "[ ] 0"
+        matrix double name "GraphMark" in menu run default "[ ] 0"
+        matrix double oneindex name "EDbl" in menu run default "[ ] 0"
+        matrix int oneindex name "EInt" in menu run default "[ ] 0"
+        matrix double name "MInput" in default "[ ] 0"
+        signal name "MInputSet" in run default 0
+        matrix string oneindex name "RowHdr" in run default "[ ] "
+        matrix string oneindex name "ColHdr" in run default "[ ] "
+        signal name "HdrChange" default 1
+        char name "Command" in default 0
+        short name "Sync" in default 0
+       end
+      auto
+       begin
+        var "RowHdr" ctrl "HdrChange"
+        var "ColHdr" ctrl "HdrChange"
+       end
+      picture id 0 end
+      dll file "$DLL$\\Common.dll" func "MatDisplayNoWin" draw mouse pass hint setup "" auto
+      dlldata text
+       window 209 153 839 480 horz "59.713376" filename ""
+       grid col 88 row 19 dec 8 open
+       export label "" file ""
+       expfam label "" file ""
+       bitmap file "" color 255 horz 0 16 "0" "1" vert 0 16 "0" "1"
+       graph col autox "0" autoy "0.1" horz 0 open legend 50 xfix
+       title text "Зависимость прибыли агента от объема производства" param font "Arial" height -13 charset 1 color 0 show
+       layout back 16777215 frame 0 border 16777215 0
+       axisx
+       begin
+       title text "Y" param font "Arial" height -13 charset 1 color 0 show
+       scale min "0" max "1" step "1" numbers dec 1 param font "Arial" height 13 charset 1 color 0 ticks 5 mul 0
+       lines show color 0 style dot
+       zero show color 0 style solid
+       end
+       axisy
+       begin
+       title text "F(Y)" param font "Arial" height -13 charset 1 color 0 show
+       scale min "0" max "1" step "1" numbers dec 1 param font "Arial" height 13 charset 1 color 0 ticks 5 mul 0
+       lines show color 0 style dot
+       zero show color 0 style solid
+       end
+       line color 0 width 2 style 0 index 1
+       csv 44 34 0
+       extmark horz 5 1 0 vert 0 1 255 type 1 5 0
+      enddlldata
+      rect 400 265
+     end
+    dllblock name "Graph3D1" id 46
+     begin
+      pos 645 510
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in menu run default 0
+        signal name "Ready" out menu default 0
+        matrix double name "input" in menu run default "[ ] 0"
+        signal name "refresh" default 0
+        double name "level" in menu run default "?"
+       end
+      auto
+       begin
+        var "input" ctrl "refresh"
+       end
+      dll file "$DLL$\\svisuals.dll" func "Graph3D@12" draw mouse setup "" auto
+      dlldata text
+       RotateV "19.5" RotateH "-194" MinStep "5" NDecX 1 NDecY 1 NDecZ 1 GridLinesX 2 GridLinesY 2 GridLinesZ 2 AxisWidth 3 LevelWidth 3 FixedVertRange_Enabled 0 FixedVertRange_Min "0" FixedVertRange_Max "1" EnableObj0 1 EnableObj1 0 EnableObj2 1 EnableObj3 1 EnableObj4 1 EnableObj5 1 EnableObj6 1 Title "Оптимальная прибыль агента" LabelShort1 "L" LabelLong1 "Ось №1" LabelShort2 "r" LabelLong2 "Ось №2" LabelShort3 "F" LabelLong3 "Ось №3" Font0 " font \"Arial\" height -14 charset rus color 16711680" Font1 " font \"Arial\" height -14 charset rus color 16711680" Font2 " font \"Arial\" height -14 charset rus color 16711680" SurfPaint 2 Color0 12298922 Color1 0 Color2 16711680 Color3 11206655 Color4 0 Color5 16777215 Color6 0 Color7 16711680 Color8 255 Color9 255
+      enddlldata
+      rect 400 365
+     end
+    dllblock name "StopWatch1" id 48
+     begin
+      pos 455 760
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "_Start" in run default 0
+        signal name "Ready" out default 0
+        int name "Flags" default 1906
+        int name "BorderWidth" default 1
+        int name "NormBorderColor" in default 0
+        int name "WorkBorderColor" in default 0
+        int name "NormFillColor" in default 16777215
+        int name "WorkFillColor" in default 8454143
+        double name "Delay" out menu default "0"
+        signal name "Start" in menu run default 0
+        signal name "Stop" in menu run default 0
+        signal name "Reset" in menu run default 0
+        signal name "Restart" in menu run default 0
+        int name "Format" default 1
+        double name "Time" in run default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "RtSec" draw setup "" auto
+      dlldata text
+       [Main]
+       StopFont= font "Arial" height -15 charset rus color 0
+       WorkFont= font "Arial" height -15 charset rus color 0
+       DynVar=DynTime
+       Header=Время вычисления
+      enddlldata
+      rect 155 20
+     end
+    dllblock name "Прогресс вычислений" id 49
+     begin
+      pos 455 785
+      layer id 2
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 0
+        signal name "Ready" out default 0
+        double name "Val" in menu run default "0"
+        double name "Min" in run default "0"
+        double name "Max" in run default "1"
+       end
+      dll file "$DLL$\\Common.dll" func "SingleBarGraph" draw setup "" auto
+      dlldata text
+       horz frame 0 low 16711680 high 16777215
+      enddlldata
+      rect 155 15
+     end
+    dllblock name "StopWatch2" id 52
+     begin
+      pos 240 880
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "_Start" in run default 0
+        signal name "Ready" out default 0
+        int name "Flags" default 1906
+        int name "BorderWidth" default 1
+        int name "NormBorderColor" in default 0
+        int name "WorkBorderColor" in default 0
+        int name "NormFillColor" in default 16777215
+        int name "WorkFillColor" in default 8454143
+        double name "Delay" out menu default "0"
+        signal name "Start" in menu run default 0
+        signal name "Stop" in menu run default 0
+        signal name "Reset" in menu run default 0
+        signal name "Restart" in menu run default 0
+        int name "Format" default 1
+        double name "Time" in run default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "RtSec" draw setup "" auto
+      dlldata text
+       [Main]
+       StopFont= font "Arial" height -15 charset rus color 0
+       WorkFont= font "Arial" height -15 charset rus color 0
+       DynVar=DynTime
+       Header=Время вычисления
+      enddlldata
+      rect 155 20
+     end
+    dllblock name "Прогресс вычислений1" id 53
+     begin
+      pos 240 905
+      layer id 2
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 0
+        signal name "Ready" out default 0
+        double name "Val" in menu run default "0"
+        double name "Min" in run default "0"
+        double name "Max" in run default "1"
+       end
+      dll file "$DLL$\\Common.dll" func "SingleBarGraph" draw setup "" auto
+      dlldata text
+       horz frame 0 low 16711680 high 16777215
+      enddlldata
+      rect 155 15
+     end
+    dllblock name "DDisplay8" id 56
+     begin
+      pos 170 530
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 9.69487 initial
+       frame border 0 fill 65280
+      enddlldata
+      rect 75 19
+     end
+    dllblock name "Размер кредита V" id 57
+     begin
+      pos 20 555
+      layer id 2
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 1
+        signal name "Ready" out default 0
+        double name "Val" out menu hide default "0"
+        signal name "SetMin" in run default 0
+        signal name "SetAvg" in run default 0
+        signal name "SetMax" in run default 0
+        double name "ExtSetting" in run default "0"
+        signal name "ExtSettingS" default 0
+        double name "VMin" in run default "0"
+        double name "VMax" in run default "100"
+        signal name "DiapS" default 0
+       end
+      auto
+       begin
+        var "ExtSetting" ctrl "ExtSettingS"
+        var "VMin" ctrl "DiapS"
+        var "VMax" ctrl "DiapS"
+       end
+      dll file "$DLL$\\Common.dll" func "TrackBar" draw mouse setup "" auto
+      dlldata text
+       flags 60 min "0" max "100" back 65280 frame 0 llcolor 16777215 ldcolor 14935011 dlcolor 10526880 ddcolor 6908265 hcolor 15790320 slcolor 15790320 htype 0 hsize 15 hside 28 slot 5 trackshift 5 scaleshift 5 ticksize 7 tickstep "0.5" font font "Arial" height 13 charset 135 color 0 tickcolor 0 dec 1 smticksize 4 smtickcnt 5 resetto "21.6667"
+      enddlldata
+      rect 230 70
+     end
+    dllblock name "DDisplay9" id 60
+     begin
+      pos 175 645
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 0.647887 initial
+       frame border 0 fill 65280
+      enddlldata
+      rect 75 19
+     end
+    dllblock name "Cтавка по кредиту g" id 61
+     begin
+      pos 20 670
+      layer id 2
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 1
+        signal name "Ready" out default 0
+        double name "Val" out menu hide default "0"
+        signal name "SetMin" in run default 0
+        signal name "SetAvg" in run default 0
+        signal name "SetMax" in run default 0
+        double name "ExtSetting" in run default "0"
+        signal name "ExtSettingS" default 0
+        double name "VMin" in run default "0"
+        double name "VMax" in run default "2"
+        signal name "DiapS" default 0
+       end
+      auto
+       begin
+        var "ExtSetting" ctrl "ExtSettingS"
+        var "VMin" ctrl "DiapS"
+        var "VMax" ctrl "DiapS"
+       end
+      dll file "$DLL$\\Common.dll" func "TrackBar" draw mouse setup "" auto
+      dlldata text
+       flags 60 min "0" max "2" back 65280 frame 0 llcolor 16777215 ldcolor 14935011 dlcolor 10526880 ddcolor 6908265 hcolor 15790320 slcolor 15790320 htype 0 hsize 15 hside 28 slot 5 trackshift 5 scaleshift 5 ticksize 7 tickstep "0.5" font font "Arial" height 13 charset 135 color 0 tickcolor 0 dec 1 smticksize 4 smtickcnt 5 resetto "1"
+      enddlldata
+      rect 230 70
+     end
+    dllblock name "L57_ArgMax3" id 66
+     begin
+      pos 445 885
+      layer id 1
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "_Start" in run default 1
+        signal name "_Ready" out default 0
+        short name "Aux_in" in hide default 0
+        short name "Aux_out" out hide default 0
+        signal name "Start_cmd" in menu run default 0
+        signal name "Restart_cmd" in menu run default 0
+        matrix logical oneindex name "Enabled_in" in run default "[ ] 0"
+        signal name "_Enabled_chg" default 1
+        int name "_Stage" out default 0
+        int name "_SubStage" out default 0
+        logical name "_results_ok" default 0
+        logical name "_enabled_res" default 1
+        logical name "Complete_out" out default 0
+        logical name "Error_out" out default 0
+        signal name "Finished_out" out default 0
+        signal name "Started_out" out default 0
+        double name "Time_out" out default "?"
+        char name "Func_in" in menu default 0
+        char name "Func_out" out menu default 0
+        signal name "_allinval_dchg" default 1
+        double name "L" in menu run default "0"
+        double name "L0" in menu run default "0"
+        double name "r" in menu run default "0"
+        double name "G" in menu run default "0"
+        matrix double name "argmax_func" out menu default "[ ] ?"
+        matrix double name "AllMax_out" out default "[ ] ?"
+        double name "Progress_out" out default "0"
+        matrix double oneindex name "Y_res" out menu default "[ ] ?"
+        double name "Y_res_f" out default "?"
+        matrix double oneindex name "V_res" out menu default "[ ] ?"
+        double name "V_res_f" out default "?"
+        matrix double oneindex name "_max_res" out menu default "[ ] ?"
+        double name "_max_res_f" out default "?"
+       end
+      auto
+       begin
+        var "Enabled_in" ctrl "_Enabled_chg"
+        var "AllMax_out" ctrl "_results_ok"
+        var "Complete_out" ctrl "_results_ok"
+        var "Error_out" ctrl "_results_ok"
+        var "L" ctrl "_allinval_dchg"
+        var "L0" ctrl "_allinval_dchg"
+        var "r" ctrl "_allinval_dchg"
+        var "G" ctrl "_allinval_dchg"
+        var "argmax_func" ctrl "_results_ok"
+        var "Y_res" ctrl "_results_ok"
+        var "Y_res_f" ctrl "_results_ok"
+        var "V_res" ctrl "_results_ok"
+        var "V_res_f" ctrl "_results_ok"
+        var "_max_res" ctrl "_results_ok"
+        var "_max_res_f" ctrl "_results_ok"
+       end
+      layout rect 155 135 fill 16777215 line 0 text "Поиск оптимальных\r\nдействий агента\r\nи размера кредита\r\nприбыль" font "Arial" height 13 color 0
+      dll file "L57_ArgMax2.dll" func "rdsbcppBlockEntryPoint" setup "" auto
+      dlldata text
+       rdsbcppsetupparameters
+       begin
+       var deepsearch_setup 1
+       var noautostart_setup 0
+       var ChunkSizeMb_setup "10"
+       var tactcount_setup 1000
+       var EqualMaxDelta_setup "9.99999974738e-05"
+       var PrecToEndSteps_setup 1
+       var PrecToDf_setup 0
+       var DfCycles_setup 15
+       var DfDelta_setup "9.99999974738e-06"
+       var PrecGridSize_setup 1
+       var NoPlateau_setup 1
+       var TabAfterCalc_setup 1
+       var TabPrecCalc_setup 1
+       var Tab_PrecToEndSteps_setup 1
+       var Tab_PrecToDf_setup 0
+       var Tab_DfCycles_setup 5
+       var Tab_DfDelta_setup "9.99999974738e-06"
+       var Tab_PrecGridSize_setup 1
+       var DfFilter_setup "9.99999974738e-06"
+       var TR_params 0
+       var TR_text "Внутренний\r\nмаксимизатор"
+       var StartCycles_setup 20
+       end
+      enddlldata
+      autocomp file "$DLL$\\Common.dll" func "SearchComp" model "L57_ArgMax2.mdl" alt "C:\\Users\\Kolya\\RDS\\L5\\L57_ArgMax2.mdl\nC:\\Users\\Kolya\\RDS\\L5\\main.rds"
+     end
+    dllblock name "StopWatch3" id 67
+     begin
+      pos 445 1025
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "_Start" in run default 0
+        signal name "Ready" out default 0
+        int name "Flags" default 1906
+        int name "BorderWidth" default 1
+        int name "NormBorderColor" in default 0
+        int name "WorkBorderColor" in default 0
+        int name "NormFillColor" in default 16777215
+        int name "WorkFillColor" in default 8454143
+        double name "Delay" out menu default "0"
+        signal name "Start" in menu run default 0
+        signal name "Stop" in menu run default 0
+        signal name "Reset" in menu run default 0
+        signal name "Restart" in menu run default 0
+        int name "Format" default 1
+        double name "Time" in run default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "RtSec" draw setup "" auto
+      dlldata text
+       [Main]
+       StopFont= font "Arial" height -15 charset rus color 0
+       WorkFont= font "Arial" height -15 charset rus color 0
+       DynVar=DynTime
+       Header=Время вычисления
+      enddlldata
+      rect 155 20
+     end
+    dllblock name "Прогресс вычислений2" id 68
+     begin
+      pos 445 1050
+      layer id 2
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run default 0
+        signal name "Ready" out default 0
+        double name "Val" in menu run default "0"
+        double name "Min" in run default "0"
+        double name "Max" in run default "1"
+       end
+      dll file "$DLL$\\Common.dll" func "SingleBarGraph" draw setup "" auto
+      dlldata text
+       horz frame 0 low 16711680 high 16777215
+      enddlldata
+      rect 155 15
+     end
+    dllblock name "DDisplay10" id 73
+     begin
+      pos 660 905
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 57.0565 initial
+       frame border 0 fill 12632256
+       caption text "Абс Прибыль агента" font "Arial" height 15 charset 1 color 0
+      enddlldata
+      rect 330 19
+     end
+    dllblock name "DDisplay11" id 74
+     begin
+      pos 660 965
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 5.8 initial
+       frame border 0 fill 12632256
+       caption text "Абс. Оптимальное действие агента" font "Arial" height 15 charset 1 color 0
+      enddlldata
+      rect 325 19
+     end
+    dllblock name "DDisplay12" id 75
+     begin
+      pos 660 935
+      layer id 2
+      name hidden
+      options sizeable
+      vars
+       begin
+        signal name "Start" in run hide default 0
+        signal name "Ready" out hide default 0
+        double name "v" in menu run hide default "0"
+       end
+      dll file "$DLL$\\Common.dll" func "DoubleDisplay" draw lockh setup "" auto
+      dlldata text
+       value prec 1 font "Arial" height 15 color 0 set 16.4688 initial
+       frame border 0 fill 12632256
+       caption text "Абс. Максимальная прибыль агента" font "Arial" height 15 charset 1 color 0
+      enddlldata
+      rect 325 19
+     end
+    conn id 4
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Цена сырья L0" var "Val" out pos 95 0 cname right up hidden
+        id 1 block "DDisplay1" var "v" in pos 30 19 cname right down hidden
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 8
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Тип агента r" var "Val" out pos 95 0 cname right up hidden
+        id 1 block "DDisplay2" var "v" in pos 30 19 cname right down hidden
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 12
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "действие агента у" var "Val" out pos 95 0 cname right up hidden
+        id 1 block "DDisplay3" var "v" in pos 30 19 cname right down hidden
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 16
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Рыночная цена L" var "Val" out pos 95 0 cname right up hidden
+        id 1 block "DDisplay4" var "v" in pos 30 19 cname right down hidden
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 20
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Цена сырья L0" var "Val" out pos 230 30 cname right up hidden
+        id 1 pos 370 205
+        id 2 block "L57_FCalc1" var "L0" in pos 5 80 cname right down
+        id 3 pos 325 205
+        id 4 pos 325 515
+        id 5 block "L57_ArgMax1" var "L0" in pos 40 0 cname right up
+        id 6 pos 325 515
+        id 7 block "L57_ArgMax2" var "L0" in pos 85 0 cname right up
+        id 8 pos 495 515
+        id 9 pos 325 515
+        id 10 pos 440 515
+        id 11 pos 440 825
+        id 12 pos 585 825
+        id 13 block "L57_ArgMax3" var "L0" in pos 140 0 cname right up
+       end
+      lines
+       begin
+        line 1 2
+        line 0 3
+        line 3 1
+        line 3 4
+        line 4 6
+        line 8 5
+        line 6 9
+        line 9 7
+        line 6 10
+        line 10 8
+        line 10 11
+        line 11 12
+        line 12 13
+       end
+     end
+    conn id 21
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Рыночная цена L" var "Val" out pos 230 30 cname right up hidden
+        id 1 block "L57_FCalc1" var "L" in pos 0 40 cname left up
+        id 2 pos 345 70
+        id 3 pos 345 500
+        id 4 block "L57_ArgMax1" var "L" in pos 20 0 cname right up
+        id 5 pos 475 500
+        id 6 pos 445 500
+        id 7 pos 445 840
+        id 8 pos 570 840
+        id 9 block "L57_ArgMax3" var "L" in pos 125 0 cname right up
+       end
+      lines
+       begin
+        line 0 2
+        line 2 1
+        line 2 3
+        line 5 4
+        line 3 6
+        line 6 5
+        line 6 7
+        line 7 8
+        line 8 9
+       end
+     end
+    conn id 22
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Тип агента r" var "Val" out pos 230 35 cname right up hidden
+        id 1 pos 395 345
+        id 2 block "L57_FCalc1" var "r" in pos 30 80 cname right down
+        id 3 pos 395 345
+        id 4 pos 395 485
+        id 5 block "L57_ArgMax1" var "r" in pos 0 0 cname left up
+        id 6 pos 455 485
+        id 7 pos 445 485
+        id 8 pos 435 865
+        id 9 pos 475 865
+        id 10 block "L57_ArgMax3" var "r" in pos 30 0 cname right up
+       end
+      lines
+       begin
+        line 1 2
+        line 0 3
+        line 3 1
+        line 3 4
+        line 6 5
+        line 4 7
+        line 7 6
+        line 7 8
+        line 8 9
+        line 9 10
+       end
+     end
+    conn id 23
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "действие агента у" var "Val" out pos 230 25 cname right up hidden
+        id 1 pos 430 465
+        id 2 block "L57_FCalc1" var "Y" in pos 65 80 cname right down
+        id 3 pos 380 465
+        id 4 pos 465 465
+        id 5 pos 600 465
+        id 6 block "MDInlineGraph1" var "GraphMark[0,0]" in pos 5 245 cname left up
+       end
+      lines
+       begin
+        line 1 2
+        line 0 3
+        line 3 1
+        line 3 4
+        line 4 5
+        line 5 6
+       end
+     end
+    conn id 30
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax1" var "_max_res[0]" out pos 60 0 cname right up
+        id 1 pos 515 70
+        id 2 block "DDisplay7" var "v" in pos 0 10 cname left up hidden
+        id 3 pos 515 170
+        id 4 block "L57_FCalc2" var "fopt" in pos 0 30 cname left up
+       end
+      lines
+       begin
+        line 1 2
+        line 0 3
+        line 3 1
+        line 3 4
+       end
+     end
+    conn id 31
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax1" var "Y_res[0]" out pos 125 0 cname right up
+        id 1 pos 580 100
+        id 2 block "DDisplay6" var "v" in pos 0 10 cname left up hidden
+        id 3 pos 580 330
+        id 4 block "MDInlineGraph1" var "GraphMark[0,1]" in pos 5 110 cname left up
+       end
+      lines
+       begin
+        line 1 2
+        line 0 3
+        line 3 1
+        line 3 4
+       end
+     end
+    conn id 32
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_FCalc1" var "Calc_out" out pos 140 10 cname right up
+        id 1 block "DDisplay5" var "v" in pos 0 10 cname left up hidden
+        id 2 pos 535 40
+        id 3 pos 535 150
+        id 4 block "L57_FCalc2" var "f" in pos 0 10 cname left up
+       end
+      lines
+       begin
+        line 0 2
+        line 2 1
+        line 2 3
+        line 3 4
+       end
+     end
+    conn id 39
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Критерии оценки эффективности" var "edit" out pos 30 10 cname left up hidden
+        id 1 block "Semaphore1" var "lev1" in pos 80 5 cname right up
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 40
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "DEdit2" var "edit" out pos 10 10 cname left up hidden
+        id 1 block "Semaphore1" var "lev2" in pos 75 30 cname right down
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 41
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_FCalc2" var "Calc_out" out pos 140 20 cname right up
+        id 1 block "Semaphore1" var "x" in pos 0 20 cname left up
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 45
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax1" var "argmax_func" out pos 150 0 cname right up
+        id 1 block "MDInlineGraph1" var "M" in pos 5 260 cname left up hidden
+        id 2 pos 605 480
+       end
+      lines
+       begin
+        line 0 2
+        line 1 2
+       end
+     end
+    conn id 47
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax2" var "argmax_func" out pos 150 125 cname right up
+        id 1 block "Graph3D1" var "input" in pos 5 340 cname left up
+        id 2 pos 410 850
+        id 3 pos 405 850
+       end
+      lines
+       begin
+        line 2 1
+        line 0 3
+        line 3 2
+       end
+     end
+    conn id 50
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax1" var "Time_out" out pos 45 135 cname right down
+        id 1 block "StopWatch1" var "Time" in pos 46 10 cname left up
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 51
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax1" var "Progress_out" out pos 150 125 cname right up
+        id 1 block "Прогресс вычислений" var "Val" in pos 150 5 cname right up
+        id 2 pos 625 745
+        id 3 pos 625 790
+       end
+      lines
+       begin
+        line 0 2
+        line 2 3
+        line 3 1
+       end
+     end
+    conn id 54
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax2" var "Progress_out" out pos 0 120 cname left up
+        id 1 block "Прогресс вычислений1" var "Val" in pos 0 5 cname left up
+        id 2 pos 220 860
+        id 3 pos 220 910
+       end
+      lines
+       begin
+        line 0 2
+        line 2 3
+        line 3 1
+       end
+     end
+    conn id 55
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax2" var "Time_out" out pos 125 135 cname 12 -17 fixed
+        id 1 block "StopWatch2" var "Time" in pos 125 0 cname right up
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 59
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Размер кредита V" var "Val" out pos 95 0 cname right up hidden
+        id 1 block "DDisplay8" var "v" in pos 30 19 cname right down hidden
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 63
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Cтавка по кредиту g" var "Val" out pos 95 0 cname right up hidden
+        id 1 block "DDisplay9" var "v" in pos 30 19 cname right down hidden
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 64
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Размер кредита V" var "Val" out pos 230 35 cname right up hidden
+        id 1 pos 410 590
+        id 2 block "L57_FCalc1" var "V" in pos 45 80 cname right down
+        id 3 pos 410 650
+        id 4 block "L57_ArgMax1" var "V" in pos 0 30 cname left up
+        id 5 pos 410 775
+        id 6 block "L57_ArgMax2" var "V" in pos 155 35 cname right up
+       end
+      lines
+       begin
+        line 0 1
+        line 1 2
+        line 1 3
+        line 3 4
+        line 3 5
+        line 5 6
+       end
+     end
+    conn id 65
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "Cтавка по кредиту g" var "Val" out pos 230 5 cname right up hidden
+        id 1 pos 425 670
+        id 2 block "L57_FCalc1" var "G" in pos 60 80 cname right down
+        id 3 block "L57_ArgMax1" var "G" in pos 0 50 cname left up
+        id 4 pos 365 670
+        id 5 block "L57_ArgMax2" var "G" in pos 125 0 cname right up
+        id 6 pos 425 920
+        id 7 block "L57_ArgMax3" var "G" in pos 0 35 cname left up
+       end
+      lines
+       begin
+        line 1 2
+        line 1 3
+        line 0 4
+        line 4 1
+        line 4 5
+        line 1 6
+        line 6 7
+       end
+     end
+    conn id 70
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax3" var "Time_out" out pos 45 135 cname right down
+        id 1 block "StopWatch3" var "Time" in pos 46 10 cname left up
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 72
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax3" var "Progress_out" out pos 150 125 cname right up
+        id 1 block "Прогресс вычислений2" var "Val" in pos 150 5 cname right up
+        id 2 pos 615 1010
+        id 3 pos 615 1055
+       end
+      lines
+       begin
+        line 0 2
+        line 2 3
+        line 3 1
+       end
+     end
+    conn id 76
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax3" var "_max_res[0]" out pos 155 25 cname right up
+        id 1 block "DDisplay10" var "v" in pos 0 5 cname left up hidden
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 77
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax3" var "Y_res[0]" out pos 155 55 cname right up
+        id 1 block "DDisplay12" var "v" in pos 0 5 cname left up hidden
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+    conn id 78
+     begin
+      layer id 1
+      style name "Стандартная связь"
+      points
+       begin
+        id 0 block "L57_ArgMax3" var "V_res[0]" out pos 155 85 cname right up
+        id 1 block "DDisplay11" var "v" in pos 0 5 cname left up hidden
+       end
+      lines
+       begin
+        line 0 1
+       end
+     end
+   end
+  end
+
+additional
+ begin
+  window layer pos 763 196 size 270 390
+  window system ""
+ end
